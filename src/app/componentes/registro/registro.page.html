@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar color="danger">
+      <ion-title text-center>Registro</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content padding>
+      <ion-icon class ="paw" name="paw"></ion-icon>
+        <ion-item class="label">
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input type="text" name="Nombre"></ion-input>
+          </ion-item>
+          <ion-item class="label">
+              <ion-label position="floating">Apellidos</ion-label>
+              <ion-input type="text" name="Apellidos"></ion-input>
+            </ion-item>
+            <ion-item class="label">
+                <ion-label position="floating">Correo</ion-label>
+                <ion-input type="text" name="Correo"></ion-input>
+              </ion-item>
+          <ion-item>
+              <ion-label position="floating">Contraseña</ion-label>
+              <ion-input type="password" name="Contraseña"></ion-input>
+            </ion-item>
+            <ion-item class="label">
+                <ion-label position="floating">Confirme Contraseña</ion-label>
+                <ion-input type="password" name="Confirme Contraseña"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label position="floating">Fecha de Nacimiento</ion-label>
+                  <ion-datetime  display-format="MMM DD, YYYY"></ion-datetime>
+                </ion-item>
+            <br>
+    
+            <ion-button routerLink="//login" color="danger"expand="block">Crear Usuario</ion-button>
+    
+    </ion-content>
