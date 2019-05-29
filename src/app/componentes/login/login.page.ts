@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { HomePage } from 'src/app/home/home.page';
+import { MenuController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,12 +9,18 @@ import { HomePage } from 'src/app/home/home.page';
 })
 export class LoginPage implements OnInit {
 
-  constructor(public navCrtl:NavController) { }
+  constructor(    
+    private menu: MenuController,
+    private router: Router
+  ) { }
 
- 
-  ngOnInit() {
+  ngOnInit() { 
+    this.menu.enable(false);
+  }
 
-   
+  onSubmitLogin(){
+    this.menu.enable(true);
+    this.router.navigate(['/home']);
   }
   
 }
