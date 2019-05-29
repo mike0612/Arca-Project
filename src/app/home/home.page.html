@@ -1,32 +1,43 @@
-<ion-header >
-  <ion-toolbar>
-    <ion-buttons slot="start" >
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title text-center>
-     Arca <ion-icon name="paw"></ion-icon>
-    </ion-title>
-  </ion-toolbar>
-  <ion-segment scrollable>
-      <ion-segment-button checked >
-        Noticias
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title text-center>
+        Arca <ion-icon name="paw"></ion-icon>
+      </ion-title>
+    </ion-toolbar>
+  
+    <ion-segment scrollable (ionChange)="segmentChanged($event)">
+      
+      <ion-segment-button value="noticias">
+        <ion-label>Noticias</ion-label>
       </ion-segment-button>
-      <ion-segment-button>
-        Adopta
+  
+      <ion-segment-button value="adopta">
+        <ion-label>Adopta</ion-label>
       </ion-segment-button>
-      <ion-segment-button>
-        ¿Es tuyo?
+  
+      <ion-segment-button value="esTuyo">
+        <ion-label>¿Es tuyo?</ion-label>
       </ion-segment-button>
-      <ion-segment-button>
-       Citas
+  
+      <ion-segment-button value="citas">
+        <ion-label>Citas</ion-label>
       </ion-segment-button>
-      <ion-segment-button>
-       Tips
+  
+      <ion-segment-button value="tips">
+        <ion-label>Tips</ion-label>
       </ion-segment-button>
-      <ion-segment-button>
-       Contacto
+  
+      <ion-segment-button value="contacto">
+        <ion-label>Contacto</ion-label>
       </ion-segment-button>
+  
     </ion-segment>
-</ion-header>
-
-
+  
+  </ion-header>
+  
+  <ion-content padding>
+    
+  </ion-content>

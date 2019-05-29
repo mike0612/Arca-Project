@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonSegment } from '@ionic/angular';
 
 
 @Component({
@@ -8,8 +9,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  @ViewChild(IonSegment) s: IonSegment;
+
   constructor() {}
  
+  ngOnInit(){
+    this.s.value = "noticias";
+  }
 
+  segmentChanged(event){    
+  }
 
 }
