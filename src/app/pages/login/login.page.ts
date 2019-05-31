@@ -20,7 +20,7 @@ export class LoginPage implements OnInit {
 
   onSubmitLogin(){
     this.menu.enable(true);
-    this.router.navigate(['/home']);
+    this.router.navigate(['/adopta']);
   }
   
 }
