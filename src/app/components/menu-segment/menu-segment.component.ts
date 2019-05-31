@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './menu-segment.component.html',
   styleUrls: ['./menu-segment.component.scss'],
 })
+
 export class MenuSegmentComponent implements OnInit {
 
   @ViewChild(IonSegment) s: IonSegment;
