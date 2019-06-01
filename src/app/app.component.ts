@@ -21,7 +21,8 @@ export class AppComponent {
       paw:'paw',
       board:'clipboard',
       informacion:'information-circle',
-      log:'log-out'
+      log:'log-out',
+      settings:'md-settings'
     },
    
   ];
