@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding class="animated fadeIn login auth-page" class="login-content" center>
+<ion-content padding class="animated fadeIn login auth-page" class="login-content">
 
 
 <div padding-horizontal text-center class="animated fadeInDown">
@@ -33,6 +33,6 @@
   <div>
   <p  class="color" text-right ion-text  tappable (click)="forgotPass()">   ¿Olvidaste tu Contraseña</p>
   <ion-button color="danger" expand="block" (click)="onSubmitLogin()"><ion-icon name="log-in"></ion-icon>Iniciar</ion-button>
-  <ion-button color="danger" expand="block" routerLink="/registro">Regístrate</ion-button>
+  <ion-button color="danger" expand="block" routerLink="/registro"> <ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>Regístrate</ion-button>
 </div>
 </ion-content>
