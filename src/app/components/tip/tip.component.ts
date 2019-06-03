@@ -9,17 +9,28 @@ import { DatabaseService } from '../../services/database.service';
 })
 export class TipComponent implements OnInit {
 
-  tip = [];
+  data: any = [];
+  tip: any = [];
 
   constructor(
     private navParams: NavParams,
-    private model: ModalController,
+    private modal: ModalController,
     private service: DatabaseService
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {  
 
-  
+    this.data = this.navParams.get('tip');      
+
+    this.service.getTip(this.data.id).valueChanges().subscribe(tip => {
+      this.tip = tip;      
+    })
+  }
+
+  closeTip(){
+    this.modal.dismiss()
+  }
+
 
 
 }

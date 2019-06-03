@@ -10,7 +10,7 @@ import { TipComponent } from '../../components/tip/tip.component';
 })
 export class TipsPage implements OnInit {
 
-  tips = [];
+  tips:any = [];
 
   constructor(
     private service: DatabaseService,
