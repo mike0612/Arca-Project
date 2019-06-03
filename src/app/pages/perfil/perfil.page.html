@@ -1,9 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>perfil</ion-title>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <ion-card>
+    <img src="assets/icon/paw.jpg"/>
+    
+    <ion-card-content>
+      <ion-card-title>
+        Javier Anderson
+      </ion-card-title>
+      <p>
+        No Compres, Adopta <ion-icon name='paw' ></ion-icon>
+      </p>
+    </ion-card-content>
+
+    <ion-item>
+      <ion-icon name='mail' ></ion-icon>
+       Email: 
+    </ion-item>
+    <ion-item>
+      <ion-icon name='call' ></ion-icon>
+       Telefono:
+    </ion-item>
+    <ion-item>
+      <ion-icon name='paw' ></ion-icon>
+       Mascota:
+    </ion-item>
+    <ion-button class="button"color="secondary">Guardar</ion-button>
+    <ion-button class="button"color="secondary"  (click)="volver()">Salir</ion-button>
+  </ion-card>
+ 
 </ion-content>
