@@ -11,16 +11,13 @@
 </ion-header>
 
 <ion-content>
-
-
-  <ion-item>
+  <ion-item *ngFor="let tip of tips" (click)="openTip(tip)">
     <ion-thumbnail slot="start">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      <ion-img [src]="tip.img"></ion-img>
     </ion-thumbnail>
-    <ion-label>Alimanteción doberman</ion-label>
-    <p>Lorem, ipsum dolor.</p>
-    <ion-button fill="clear">Ver más...</ion-button>    
+    <ion-label>
+      <h2>{{tip.title}}</h2>
+      <p>{{tip.contenido}}</p>
+    </ion-label>    
   </ion-item>
-
-
 </ion-content>

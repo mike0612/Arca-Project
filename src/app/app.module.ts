@@ -18,10 +18,16 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/da
 
 import { DatabaseService } from './services/database.service';
 
+import { TipComponent } from './components/tip/tip.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [
+    AppComponent,
+    TipComponent    
+  ],
+  entryComponents: [
+    TipComponent,        
+  ],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 

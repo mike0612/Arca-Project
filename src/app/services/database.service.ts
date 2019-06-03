@@ -9,8 +9,8 @@ export class DatabaseService {
   constructor(private db:AngularFireDatabase) {}
 
   /* --Es tuyo?-- */
+    
 
-  
   /* --Tips-- */
   public getTips(){ return this.db.list('/tips/') }
 
