@@ -13,8 +13,9 @@ export class AppComponent {
   public appPages = [
     {
       title: 'Home',
+      url: '/adopta',
       url1:'//login',
-      url: '/home',
+      url2:'//perfil',
       icon: 'arrow-round-back',
       heart: 'heart',
       person:'person',
@@ -48,5 +49,5 @@ export class AppComponent {
     this.menu.enable(false);
     this.router.navigate(['/login']);
   }
-
+  
 }

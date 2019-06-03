@@ -10,7 +10,8 @@
       <ion-content>
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item>
+            
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url2]">
               <ion-icon slot="start" [name]="p.person"></ion-icon>
               <ion-label>Perfil</ion-label>
             </ion-item>
@@ -38,7 +39,7 @@
               <ion-icon slot="start" [name]="p.log"></ion-icon>
               <ion-label>Cerrar sesión</ion-label>
             </ion-item>
-            <!---<ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+            <!----<ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
                           <ion-icon slot="start" [name]="p.icon"></ion-icon>
                           <ion-label>
                             Ocultar barra
