@@ -11,9 +11,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from './components/components.module';
 
 import { firebaseConfig } from '../environments/environment';
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
+
+import { DatabaseService } from './services/database.service';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,16 +26,17 @@ import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/fi
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    ComponentsModule,
+    ComponentsModule, 
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFirestoreModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: FirestoreSettingsToken, useValue:{} }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },    
+    AngularFireDatabase,  
+    DatabaseService  
   ],
   bootstrap: [AppComponent]
 })
