@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from '../../services/database.service';
 
 @Component({
   selector: 'app-tips',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TipsPage implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
+  constructor(private service: DatabaseService) {      
+  }
+
+  ngOnInit() {    
+    this.service.getTips().valueChanges().subscribe((tips) => {
+      console.log(tips)
+    })
   }
 
 }
