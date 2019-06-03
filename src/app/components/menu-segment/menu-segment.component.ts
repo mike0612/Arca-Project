@@ -19,8 +19,8 @@ export class MenuSegmentComponent implements OnInit {
   }
 
   segmentChanged(event){  
-    const page = event.detail.value;
-    console.log(page)
+    //const page = event.detail.value;
+    //console.log(page)
   }
 
 }
