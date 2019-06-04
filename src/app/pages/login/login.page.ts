@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { NavController,MenuController,AlertController,ToastController } from "@ionic/angular";
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 export class LoginPage implements OnInit {
 
   constructor(    
-    private menu: MenuController,
+   
+    public menu: MenuController, 
+ 
     private router: Router
   ) { }
 
@@ -22,5 +24,6 @@ export class LoginPage implements OnInit {
     this.menu.enable(true);
     this.router.navigate(['/adopta']);
   }
+
   
 }

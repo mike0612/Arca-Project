@@ -49,5 +49,5 @@ export class AppComponent {
     this.menu.enable(false);
     this.router.navigate(['/login']);
   }
-  
+
 }
