@@ -15,7 +15,7 @@ export class MenuSegmentComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
-    this.s.value = "adopta";
+    //this.s.value = "adopta";
   }
 
   segmentChanged(event){  

@@ -10,9 +10,9 @@ const routes: Routes = [
   { path: 'citas', loadChildren: './pages/citas/citas.module#CitasPageModule' },
   { path: 'tips', loadChildren: './pages/tips/tips.module#TipsPageModule' },
   { path: 'contacto', loadChildren: './pages/contacto/contacto.module#ContactoPageModule' },
-  { path: 'noticias', loadChildren: './pages/noticias/noticias.module#NoticiasPageModule' },  { path: 'perfil', loadChildren: './pages/perfil/perfil.module#PerfilPageModule' },
-  { path: 'configuracion', loadChildren: './pages/configuracion/configuracion.module#ConfiguracionPageModule' },
-
+  { path: 'noticias', loadChildren: './pages/noticias/noticias.module#NoticiasPageModule' },
+  { path: 'perfil', loadChildren: './pages/perfil/perfil.module#PerfilPageModule' },
+ 
   
 
 
