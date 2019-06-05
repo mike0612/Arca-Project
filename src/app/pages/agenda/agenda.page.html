@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-center>
+      Arca <ion-icon name="paw"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+  <app-menu-segment></app-menu-segment>
+</ion-header>
+
+<ion-content class="cards-bg">
+
+  <ion-card>
+    <ion-item>
+   <ion-title text-center><H1>Agenda tu cita</H1></ion-title> 
+    </ion-item>
+
+    <ion-card-content>
+    <ion-card-title text-center>
+      <h2> Recuerda que nuestro horario de atencion es de 8:30 AM a 2:00 PM</h2> 
+    </ion-card-title>
+  </ion-card-content>
+    <ion-card-content>
+      <form class="list-form">
+        <ion-item>
+          <ion-label position=floating>
+            <ion-icon name="person" item-start class="text-primary"></ion-icon>
+            Nombre
+          </ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position=floating>
+            <ion-icon name="person" item-start class="text-primary"></ion-icon>
+            Apellidos
+          </ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position=floating>
+            <ion-icon name="paw" item-start class="text-primary"></ion-icon>
+            Nombre de la Mascota
+          </ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Genero</ion-label>
+          <ion-select placeholder="Select One">
+            <ion-select-option value="M">Macho</ion-select-option>
+            <ion-select-option value="H">Hembra</ion-select-option>
+          </ion-select>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position=floating>
+            <ion-icon name="heart" item-start class="text-primary"></ion-icon>
+            Edad
+          </ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      
+
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="calendar" item-start class="text-primary"></ion-icon>
+           Asigne Dia, Mes, Año y Hora
+        </ion-label>
+          <ion-datetime display-format="MMM DD, YYYY H:mm" hourValues="14,13,12,11,10,9,8" min="2019" max="2050"></ion-datetime>
+        </ion-item>
+      </form>
+    </ion-card-content>
+<ion-card-content >
+  <ion-button class="button"color="secondary" (click)=presentAlert() routerLink="/adopta">Agendar</ion-button>
+</ion-card-content>
+  </ion-card>
+</ion-content>

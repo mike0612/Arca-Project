@@ -11,7 +11,13 @@ const routes: Routes = [
   { path: 'tips', loadChildren: './pages/tips/tips.module#TipsPageModule' },
   { path: 'contacto', loadChildren: './pages/contacto/contacto.module#ContactoPageModule' },
   { path: 'noticias', loadChildren: './pages/noticias/noticias.module#NoticiasPageModule' },
-  { path: 'perfil', loadChildren: './pages/perfil/perfil.module#PerfilPageModule' },
+  { path: 'perfil', loadChildren: './pages/perfil/perfil.module#PerfilPageModule' },  { path: 'agenda', loadChildren: './pages/agenda/agenda.module#AgendaPageModule' },
+  { path: 'adoptados', loadChildren: './panel/adoptados/adoptados.module#AdoptadosPageModule' },
+  { path: 'interesados', loadChildren: './panel/interesados/interesados.module#InteresadosPageModule' },
+  { path: 'mis-citas', loadChildren: './panel/mis-citas/mis-citas.module#MisCitasPageModule' },
+  { path: 'configuraciones', loadChildren: './panel/configuraciones/configuraciones.module#ConfiguracionesPageModule' },
+  { path: 'acerca-de', loadChildren: './panel/acerca-de/acerca-de.module#AcercaDePageModule' },
+
  
   
 
