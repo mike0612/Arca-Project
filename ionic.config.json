@@ -1,5 +1,7 @@
 {
   "name": "Arca",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
