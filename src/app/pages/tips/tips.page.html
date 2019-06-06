@@ -11,13 +11,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-item *ngFor="let tip of tips" (click)="openTip(tip)">
+  <ion-item *ngFor="let t of tips" (click)="openTip(t)">
     <ion-thumbnail slot="start">
-      <ion-img [src]="tip.img"></ion-img>
+      <ion-img [src]="t.img"></ion-img>
     </ion-thumbnail>
     <ion-label>
-      <h2>{{tip.title}}</h2>
-      <p>{{tip.contenido}}</p>
+      <h2>{{t.title}}</h2>
+      <p>{{t.contenido}}</p>
     </ion-label>    
   </ion-item>
 </ion-content>

@@ -19,9 +19,7 @@ export class TipComponent implements OnInit {
   ) { }
 
   ngOnInit() {  
-
     this.data = this.navParams.get('tip');      
-
     this.service.getTip(this.data.id).valueChanges().subscribe(tip => {
       this.tip = tip;      
     })

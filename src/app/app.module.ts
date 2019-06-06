@@ -19,14 +19,17 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/da
 import { DatabaseService } from './services/database.service';
 
 import { TipComponent } from './components/tip/tip.component';
+import { EsTuyoComponent } from './components/es-tuyo/es-tuyo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TipComponent    
+    TipComponent,
+    EsTuyoComponent,
   ],
   entryComponents: [
-    TipComponent,        
+    TipComponent,
+    EsTuyoComponent,        
   ],
   imports: [
     BrowserModule, 
