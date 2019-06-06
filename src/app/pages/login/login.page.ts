@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController,MenuController,AlertController,ToastController } from "@ionic/angular";
+import { MenuController } from "@ionic/angular";
 import { Router } from '@angular/router';
 
 @Component({

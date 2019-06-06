@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'mis-citas', loadChildren: './panel/mis-citas/mis-citas.module#MisCitasPageModule' },
   { path: 'configuraciones', loadChildren: './panel/configuraciones/configuraciones.module#ConfiguracionesPageModule' },
   { path: 'acerca-de', loadChildren: './panel/acerca-de/acerca-de.module#AcercaDePageModule' },
+  { path: 'denuncia', loadChildren: './pages/denuncia/denuncia.module#DenunciaPageModule' },
 
  
   
