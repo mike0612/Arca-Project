@@ -9,7 +9,7 @@ export class DatabaseService {
   constructor(private db:AngularFireDatabase) {}
 
   /* --Es tuyo?-- */
-  public gePerdidos() { return this.db.list('/perdidos/') }
+  public getPerdidos() { return this.db.list('/perdidos/') }
 
   public getPerdidosfilter(filter) {
     return this.db.list('/perdidos/', tipo => tipo.orderByChild('tipo').equalTo(filter));

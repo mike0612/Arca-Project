@@ -25,14 +25,14 @@ export class EsTuyoPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.service.gePerdidos().valueChanges().subscribe((perdidos) => {
+    this.service.getPerdidos().valueChanges().subscribe((perdidos) => {
       this.perdidos = perdidos;
     })
   }
 
   searchTipo(){
     if(this.data == "all"){
-      this.service.gePerdidos().valueChanges().subscribe((perdidos) => {
+      this.service.getPerdidos().valueChanges().subscribe((perdidos) => {
         this.perdidos = perdidos;        
       })
     }else{      
