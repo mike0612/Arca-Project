@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './services/auth.service';
-
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -34,12 +34,16 @@ export class AppComponent {
     private statusBar: StatusBar,
     private menu: MenuController,
     private router: Router,
-    private auth: AuthService
+    private auth: AuthService,
+    private translateService: TranslateService
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
+    this.translateService.setDefaultLang('es')
+    this.translateService.use('en');
+
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
