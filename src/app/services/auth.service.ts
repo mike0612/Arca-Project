@@ -24,6 +24,10 @@ export class AuthService {
     return this.AFauth.auth.signOut();
   }
 
+  verifyAccount(mail){
+    
+  }
+
 
 
 }
