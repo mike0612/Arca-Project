@@ -18,7 +18,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-export function createTranslateLoader(http: HttpClient) {
+export function customTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 @NgModule({
@@ -32,21 +32,21 @@ export function createTranslateLoader(http: HttpClient) {
     EsTuyoComponent,        
   ],
   imports: [
-    BrowserModule, 
-    HttpClientModule,
+    BrowserModule,
     IonicModule.forRoot(), 
     AppRoutingModule,
     ComponentsModule, 
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    TranslateModule.forRoot({
-      loader: {
+    HttpClientModule,
+TranslateModule.forRoot({
+     loader: {
         provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
+        useFactory: customTranslateLoader,
         deps: [HttpClient]
-      }
-    })
+     }
+}),
   ],
   providers: [
     StatusBar,

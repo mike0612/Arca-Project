@@ -35,15 +35,17 @@ export class AppComponent {
     private menu: MenuController,
     private router: Router,
     private auth: AuthService,
-    private translateService: TranslateService
+    private _translate: TranslateService
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
-    this.translateService.setDefaultLang('es')
-    this.translateService.use('en');
-
+   
+    let userLang = navigator.language.split('-')[0];
+    userLang = /(en|de|it|fr|es|be)/gi.test(userLang) ? userLang : 'en';
+    this._translate.use(userLang);
+    
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();

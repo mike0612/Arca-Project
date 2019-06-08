@@ -1,23 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>configuraciones</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <h3>{{ 'PAGES.CONFIGURACIONES.TITLE_PAGE' | translate }}</h3>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-list>
-        <ion-item>
-          <ion-label>Escoge el  idioma</ion-label>
-          <ion-select (ionChange)="choose()">
-            <ion-option *ngFor="let item of idioms" [value]="item.value">
-              {{ item.label }}
-            </ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-  <div padding>
-    <h1>{{ 'HELLO' | translate }}</h1>
-    <p>{{ 'WELCOME' | translate }}</p>
-    <p>{{ 'GREETING' | translate:{value: '@nicobytes'} }}</p>
-  </div>
+<ion-content padding>
+  <h3>{{ 'PAGES.CONFIGURACIONES.TITLE' | translate }}</h3>
+
+  <p>
+    {{ 'PAGES.CONFIGURACIONES.CONTENT' | translate }}
+  </p>
+
+  <!----><ion-button color="primary" (click)="cambiaIdioma('es')">{{ 'PAGES.CONFIGURACIONES.BTN_ES' | translate }}</ion-button>
+  <ion-button color="secondary" (click)="cambiaIdioma('en')">{{ 'PAGES.CONFIGURACIONES.BTN_EN' | translate }}</ion-button>
+
 </ion-content>

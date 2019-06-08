@@ -1,5 +1,11 @@
 {
-    "HELLO": "Hola",
-    "WELCOME": "Bienvenido",
-    "GREETING": "Hola, {{ value }}"
-  }
+  "PAGES": {
+      "CONFIGURACIONES": {
+          "TITLE_PAGE": "INICIO",
+          "TITLE": "Title | Prueba titulo",
+          "CONTENT": "Content | Prueba contenido",
+          "BTN_ES": "Español",
+          "BTN_EN": "English"
+        }
+      }
+}
