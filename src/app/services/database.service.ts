@@ -8,6 +8,11 @@ export class DatabaseService {
 
   constructor(private db:AngularFireDatabase) {}
 
+  /* --Verificar cuenta de usuario-- */  
+  public getUserEmail(mail) {
+    return this.db.list('/tipoUsuarios/', email => email.orderByChild('email').equalTo(mail));
+  }
+ 
   /* --Es tuyo?-- */
   public getPerdidos() { return this.db.list('/perdidos/') }
 
