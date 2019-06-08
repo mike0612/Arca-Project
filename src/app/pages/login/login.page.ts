@@ -84,7 +84,7 @@ export class LoginPage implements OnInit {
 
   async showLoading() {
     const loading = await this.loadingController.create({
-      message: 'Verificando usuario',
+      message: 'Iniciando sesión',
     });
     loading.present();
   }
