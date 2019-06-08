@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-configuraciones',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./configuraciones.page.scss'],
 })
 export class ConfiguracionesPage implements OnInit {
-
-  constructor() { }
+  
+  constructor(
+    private navCtrl: NavController,
+    private _translate: TranslateService
+  ) {  
+    
+  }
 
   ngOnInit() {
   }
-
+  cambiaIdioma(idioma: string) {
+    console.log(`Traduzco a: ${idioma}`);
+    this._translate.use(idioma);
+  }
+  
 }
