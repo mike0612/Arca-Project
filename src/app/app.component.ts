@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform, MenuController } from '@ionic/angular';
+import { Platform, MenuController, ToastController} from '@ionic/angular';
 import { Router } from '@angular/router';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -35,17 +35,18 @@ export class AppComponent {
     private menu: MenuController,
     private router: Router,
     private auth: AuthService,
-    private _translate: TranslateService
+    private _translate: TranslateService,
+    private toastCtrl: ToastController,    
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
-   
+
     let userLang = navigator.language.split('-')[0];
     userLang = /(en|de|it|fr|es|be)/gi.test(userLang) ? userLang : 'en';
     this._translate.use(userLang);
-    
+
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
@@ -55,11 +56,18 @@ export class AppComponent {
   onLogOut() {
     this.auth.logOut().then(res => {
       this.menu.enable(false);
+      this.presentToast('Su sesión se cerró correctamente');
       this.router.navigate(['/login']);
-    }).catch(error => console.log(error))
-
+    }).catch((error) => {
+      this.presentToast('Ha ocurrido un error, Inténtelo más tarde');
+    })
   }
 
-
+  async presentToast(message: string) {
+    const toast = await this.toastCtrl.create({
+      message, duration: 500
+    });
+    toast.present();
+  }
 
 }

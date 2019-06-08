@@ -18,23 +18,23 @@ export class LoginPage implements OnInit {
   pb:boolean;
 
   constructor(
-    private menu: MenuController,
+    private menuCtrl: MenuController,
     private auth: AuthService,
     private router: Router,
-    private toastController: ToastController,
-    private loadingController: LoadingController,
+    private toastCtrl: ToastController,
+    private loadingCtrl: LoadingController,
     private service: DatabaseService
   ) { }
 
   ngOnInit() {
-    this.menu.enable(false);
+    this.menuCtrl.enable(false);
     this.pb=false;
   }
 
   validation() {
     if (this.user.email != null && this.user.password != null) {
       if (!this.regEx.test(this.user.email)) {
-        this.presentToast('Ha ingresado un correo inválido, intente nuevamente');
+        this.presentToast('Ha ingresado un correo inválido');
       } else if (this.user.password == '') {
         this.presentToast('Ingrese su contraseña');
       } else {
@@ -53,15 +53,16 @@ export class LoginPage implements OnInit {
       if (this.loadUser.find(res => res.email == this.user.email)) {        
         if (this.loadUser.find(res => res.tipo == 3)) {
           this.pb = false;
+          this.toastCtrl.dismiss();
           this.showLoading();
           this.auth.logIn(this.user.email, this.user.password).then(res => {
-            this.loadingController.dismiss().then(() => {
-              this.menu.enable(true);
+            this.loadingCtrl.dismiss().then(() => {
+              this.menuCtrl.enable(true);
               this.presentToast('Sesión iniciada');
               this.router.navigate(['/adopta']);
             })
           }).catch((error) => {
-            this.loadingController.dismiss().then(() => {
+            this.loadingCtrl.dismiss().then(() => {
               this.presentToast('No se pudo iniciar sesión, revise los datos infresados o su conexión a internet');
             })
           })
@@ -75,21 +76,20 @@ export class LoginPage implements OnInit {
       }
     })
   }
-
+  
   forgotPass() {
 
   }
 
-  async presentToast(msg: string) {
-    const toast = await this.toastController.create({
-      message: msg,
-      duration: 1500
+  async presentToast(message: string) {
+    const toast = await this.toastCtrl.create({
+      message, duration: 500
     });
     toast.present();
   }
 
   async showLoading() {
-    const loading = await this.loadingController.create({
+    const loading = await this.loadingCtrl.create({
       message: 'Iniciando sesión',
     });
     loading.present();
