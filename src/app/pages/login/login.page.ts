@@ -15,6 +15,7 @@ export class LoginPage implements OnInit {
   user = {} as User;
   regEx = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
   loadUser: any = [];
+  pb:boolean;
 
   constructor(
     private menu: MenuController,
@@ -27,6 +28,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.menu.enable(false);
+    this.pb=false;
   }
 
   validation() {
@@ -44,11 +46,13 @@ export class LoginPage implements OnInit {
   }
 
   onSubmitLogin() {
+    this.pb = true;
     this.presentToast('Verificando usuario')    
     this.service.getUserEmail(this.user.email).valueChanges().subscribe((user) => {
       this.loadUser = user;
       if (this.loadUser.find(res => res.email == this.user.email)) {        
         if (this.loadUser.find(res => res.tipo == 3)) {
+          this.pb = false;
           this.showLoading();
           this.auth.logIn(this.user.email, this.user.password).then(res => {
             this.loadingController.dismiss().then(() => {
@@ -58,13 +62,15 @@ export class LoginPage implements OnInit {
             })
           }).catch((error) => {
             this.loadingController.dismiss().then(() => {
-              this.presentToast('No se pudo iniciar sesión, revise sus datos o su conexión a internet');
+              this.presentToast('No se pudo iniciar sesión, revise los datos infresados o su conexión a internet');
             })
           })
-        } else {                    
+        } else {    
+          this.pb = false;                
           this.presentToast('El correo que ingresó no coincide con ninguna cuenta');
         }
-      } else {                        
+      } else {            
+        this.pb = false;            
         this.presentToast('El correo que ingresó no coincide con ninguna cuenta');
       }
     })

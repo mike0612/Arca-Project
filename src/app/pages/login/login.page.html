@@ -32,11 +32,16 @@
   </form>
   <div>
     <p class="color" text-right ion-text tappable (click)="forgotPass()"> ¿Olvidaste Tu Contraseña?</p>
-    <ion-button color="danger" expand="block" (click)="validation()">
+    <ion-button color="danger" expand="block" (click)="validation()" [disabled]="pb">
       <ion-icon name="log-in"></ion-icon>Iniciar
     </ion-button>
-    <ion-button color="danger" expand="block" routerLink="/registro">
+    <ion-button color="danger" expand="block" routerLink="/registro" [disabled]="pb">
       <ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>Regístrate
     </ion-button>
   </div>
+  <div align="center">
+    <br>
+    <ion-spinner name="crescent" color="danger" *ngIf="pb"></ion-spinner>
+  </div>
+
 </ion-content>
