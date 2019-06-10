@@ -16,12 +16,34 @@ export class MenuSegmentComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
-    //this.s.value = "adopta";
+ 
+  
   }
 
   segmentChanged(event){  
-    //const page = event.detail.value;
-    //console.log(page)
+    const page = event.detail.value;
+    console.log(page)
   }
 
+  adopta(){
+    this.router.navigate(['/adopta']);
+  }
+  estuyo(){
+    this.router.navigate(['/es-tuyo']);
+  }
+  noticias(){
+    this.router.navigate(['/noticias']);
+  }
+  citas(){
+    this.router.navigate(['/citas']);
+  }
+  tips(){
+    this.router.navigate(['/tips']);
+  }
+  denuncia(){
+    this.router.navigate(['/denuncia']);
+  }
+  contacto(){
+    this.router.navigate(['/contacto']);
+  }
 }

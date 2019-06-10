@@ -25,6 +25,8 @@ export class EsTuyoPage implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    
     this.service.getPerdidos().valueChanges().subscribe((perdidos) => {
       this.perdidos = perdidos;
     })
