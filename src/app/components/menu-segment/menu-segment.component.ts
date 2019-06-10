@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 
 export class MenuSegmentComponent implements OnInit {
 
+
   @ViewChild(IonSegment) s: IonSegment;
 
   constructor(private router:Router) { }

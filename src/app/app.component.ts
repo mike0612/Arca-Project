@@ -14,6 +14,7 @@ export class AppComponent {
     {
       title: 'Home',
       url: '/adopta',
+      setting:'//configuraciones',
       url1: '//login',
       url2: '//perfil',
       icon: 'arrow-round-back',
@@ -44,7 +45,7 @@ export class AppComponent {
   initializeApp() {
 
     let userLang = navigator.language.split('-')[0];
-    userLang = /(en|de|it|fr|es|be)/gi.test(userLang) ? userLang : 'en';
+    userLang = /(en|es|)/gi.test(userLang) ? userLang : '';
     this._translate.use(userLang);
 
     this.platform.ready().then(() => {

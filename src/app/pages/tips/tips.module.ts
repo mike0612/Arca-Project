@@ -5,6 +5,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { TipsPage } from './tips.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { customTranslateLoader } from 'src/app/app.module';
 
 const routes: Routes = [
   {
@@ -18,6 +21,13 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: customTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
     RouterModule.forChild(routes),
     ComponentsModule
   ],
