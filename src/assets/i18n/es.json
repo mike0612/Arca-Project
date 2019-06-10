@@ -1,11 +1,29 @@
 {
   "PAGES": {
       "CONFIGURACIONES": {
-          "TITLE_PAGE": "INICIO",
-          "TITLE": "Title | Prueba titulo",
-          "CONTENT": "Content | Prueba contenido",
-          "BTN_ES": "Español",
-          "BTN_EN": "English"
+        "TITLE_PAGE": "Arca",
+        "PANEL_PERFIL": "Perfil",
+        "PANEL_ADOPTADOS": "Adoptados",
+        "PANEL_INTERESADOS": "Interesados",
+        "PANEL_MIS_CITAS": "Mis citas",
+        "PANEL_CONFIGUACIONES": "Configuraciones",
+        "PANEL_ACERCADE":"Acerca de...",
+        "PANEL_CERRARSESION":"Cerrar sesión",
+
+        "SEGMENTO_ADOPTA":"Adopta",
+        "SEGMENTO_ESTUYO":"¿Es tuyo?",
+        "SEGMENTO_NOTICIAS":"Noticias",
+        "SEGMENTO_CITAS":"Citas",
+        "SEGMENTO_TIPS":"Tips",
+        "SEGMENTO_DENUNCIA":"Denuncia",
+        "SEGMENTO_CONTACTO":"Contacto",
+
+        "BTN_ES": "Español",
+        "BTN_EN": "Inglés",
+        "BTN_SALIR": "Salir"
         }
+        
+      
       }
+      
 }

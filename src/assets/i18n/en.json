@@ -1,11 +1,28 @@
 {
   "PAGES": {
       "CONFIGURACIONES": {
-          "TITLE_PAGE": "HOME",
-          "TITLE": "Title | Test title",
-          "CONTENT": "Content | Content Test",
+          "TITLE_PAGE": "Arca",
+          "PANEL_PERFIL": "Profile",
+          "PANEL_ADOPTADOS": "Adopted pets",
+          "PANEL_INTERESADOS": "Interested pets",
+          "PANEL_MIS_CITAS": "My appointments",
+          "PANEL_CONFIGUACIONES": "Configurations",
+          "PANEL_ACERCADE":"About",
+          "PANEL_CERRARSESION":"Sign Off",
+
+          "SEGMENTO_ADOPTA":"Adopt",
+          "SEGMENTO_ESTUYO":"It's yours?",
+          "SEGMENTO_NOTICIAS":"News",
+          "SEGMENTO_CITAS":"Schedule Appointment",
+          "SEGMENTO_TIPS":"Tips",
+          "SEGMENTO_DENUNCIA":"Complaint",
+          "SEGMENTO_CONTACTO":"Contact",
+
+
           "BTN_ES": "Spanish",
-          "BTN_EN": "English"
+          "BTN_EN": "English",
+          "BTN_SALIR": "Go out"
         }
+        
       }
 }

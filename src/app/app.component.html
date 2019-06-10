@@ -3,7 +3,7 @@
     <ion-menu>
       <ion-header>
         <ion-toolbar>
-          <ion-title>Arca<ion-icon name="paw"></ion-icon>
+          <ion-title>{{ 'PAGES.CONFIGURACIONES.TITLE_PAGE' | translate }}<ion-icon name="paw"></ion-icon>
           </ion-title>
         </ion-toolbar>
       </ion-header>
@@ -13,31 +13,31 @@
             
             <ion-item [routerDirection]="'root'" [routerLink]="[p.url2]">
               <ion-icon slot="start" [name]="p.person"></ion-icon>
-              <ion-label>Perfil</ion-label>
+              <ion-label>{{ 'PAGES.CONFIGURACIONES.PANEL_PERFIL' | translate }}</ion-label>
             </ion-item>
             <ion-item>
               <ion-icon slot="start" [name]="p.heart"></ion-icon>
-              <ion-label>Adoptados</ion-label>
+              <ion-label>{{ 'PAGES.CONFIGURACIONES.PANEL_ADOPTADOS' | translate }}</ion-label>
             </ion-item>
             <ion-item>
               <ion-icon slot="start" [name]="p.paw"></ion-icon>
-              <ion-label>Interesados</ion-label>
+              <ion-label>{{ 'PAGES.CONFIGURACIONES.PANEL_INTERESADOS' | translate }}</ion-label>
             </ion-item>
             <ion-item>
               <ion-icon slot="start" [name]="p.board"></ion-icon>
-              <ion-label>Mis Citas</ion-label>
+              <ion-label>{{ 'PAGES.CONFIGURACIONES.PANEL_MIS_CITAS' | translate }}</ion-label>
             </ion-item>
             <ion-item>
               <ion-icon slot="start" [name]="p.settings"></ion-icon>
-              <ion-label>Configuraciones</ion-label>
+              <ion-label>{{ 'PAGES.CONFIGURACIONES.PANEL_CONFIGUACIONES' | translate }}</ion-label>
             </ion-item>
             <ion-item>
               <ion-icon slot="start" [name]="p.informacion"></ion-icon>
-              <ion-label>Acerca de...</ion-label>
+              <ion-label>{{ 'PAGES.CONFIGURACIONES.PANEL_ACERCADE' | translate }}</ion-label>
             </ion-item>
             <ion-item (click)="onLogOut()">
               <ion-icon slot="start" [name]="p.log"></ion-icon>
-              <ion-label>Cerrar sesión</ion-label>
+              <ion-label>{{ 'PAGES.CONFIGURACIONES.PANEL_CERRARSESION' | translate }}</ion-label>
             </ion-item>
             <!----<ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
                           <ion-icon slot="start" [name]="p.icon"></ion-icon>

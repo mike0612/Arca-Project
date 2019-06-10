@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-configuraciones',
@@ -10,8 +11,10 @@ import { TranslateService } from '@ngx-translate/core';
 export class ConfiguracionesPage implements OnInit {
   
   constructor(
+    
     private navCtrl: NavController,
-    private _translate: TranslateService
+    private _translate: TranslateService,
+    private router: Router
   ) {  
     
   }
@@ -22,5 +25,7 @@ export class ConfiguracionesPage implements OnInit {
     console.log(`Traduzco a: ${idioma}`);
     this._translate.use(idioma);
   }
-  
+  volver(){
+    this.router.navigate(['/adopta']);
+  }
 }
