@@ -24,9 +24,7 @@ export class EsTuyoPage implements OnInit {
     private modal:ModalController    
   ) { }
 
-  ngOnInit() {
-
-    
+  ngOnInit() {   
     this.service.getPerdidos().valueChanges().subscribe((perdidos) => {
       this.perdidos = perdidos;
     })

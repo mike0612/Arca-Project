@@ -4,7 +4,9 @@ import { IonicModule } from '@ionic/angular';
 import { MenuSegmentComponent } from './menu-segment/menu-segment.component';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { customTranslateLoader } from 'src/app/app.module';
+import { customTranslateLoader } from './translate';
+
+
 @NgModule({
   declarations: [
     MenuSegmentComponent,    
@@ -24,4 +26,5 @@ import { customTranslateLoader } from 'src/app/app.module';
     }),
   ],
 })
+
 export class ComponentsModule { }

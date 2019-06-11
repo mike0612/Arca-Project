@@ -16,13 +16,15 @@ export class EsTuyoComponent implements OnInit {
     private navParams: NavParams,
     private modal: ModalController,
     private service: DatabaseService
-  ) { }
-
-  ngOnInit() {
+  ) { 
     this.data = this.navParams.get('perdido');          
     this.service.getPerdido(this.data.id).valueChanges().subscribe(perdido => {
       this.perdido = perdido;
-    })    
+    })
+  }
+
+  ngOnInit() {
+        
   }
 
   closeDeail(){

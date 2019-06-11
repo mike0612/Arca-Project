@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { ConfiguracionesPage } from './configuraciones.page';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { customTranslateLoader } from 'src/app/app.module';
+import { customTranslateLoader } from '../../components/translate';
 
 const routes: Routes = [
   {
@@ -31,4 +31,5 @@ const routes: Routes = [
   ],
   declarations: [ConfiguracionesPage]
 })
+
 export class ConfiguracionesPageModule {}

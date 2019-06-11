@@ -13,37 +13,37 @@ export class MenuSegmentComponent implements OnInit {
 
   @ViewChild(IonSegment) s: IonSegment;
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
- 
-  
+
+
   }
 
-  segmentChanged(event){  
+  segmentChanged(event) {
     const page = event.detail.value;
     console.log(page)
   }
 
-  adopta(){
+  adopta() {
     this.router.navigate(['/adopta']);
   }
-  estuyo(){
+  estuyo() {
     this.router.navigate(['/es-tuyo']);
   }
-  noticias(){
+  noticias() {
     this.router.navigate(['/noticias']);
   }
-  citas(){
+  citas() {
     this.router.navigate(['/citas']);
   }
-  tips(){
+  tips() {
     this.router.navigate(['/tips']);
   }
-  denuncia(){
+  denuncia() {
     this.router.navigate(['/denuncia']);
   }
-  contacto(){
+  contacto() {
     this.router.navigate(['/contacto']);
   }
 }

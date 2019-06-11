@@ -7,7 +7,7 @@ import { AdoptaPage } from './adopta.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { customTranslateLoader } from 'src/app/app.module';
+import { customTranslateLoader } from '../../components/translate';
 const routes: Routes = [
   {
     path: '',

@@ -15,12 +15,11 @@ import { DatabaseService } from './services/database.service';
 import { TipComponent } from './components/tip/tip.component';
 import { EsTuyoComponent } from './components/es-tuyo/es-tuyo.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-export function customTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { customTranslateLoader } from './components/translate';
+
+
 @NgModule({
   declarations: [
     AppComponent,
