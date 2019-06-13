@@ -11,4 +11,15 @@
 </ion-header>
 <ion-content>
   <h1>noticias</h1>
+  <ion-card *ngFor="let n of noticias" class="sombra">
+    <img src="{{n.imagen}}" />
+    <ion-card-header (click)="openDetail(n)">
+      <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+      <p class="subtitulo">{{n.subtitulo}}</p>
+      <ion-card-title>{{n.titulo}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content text-justify>
+      {{n.contenido}}
+    </ion-card-content>    
+  </ion-card>
 </ion-content>
