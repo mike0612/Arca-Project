@@ -27,4 +27,10 @@ export class DatabaseService {
 
   public getTip(id){ return this.db.object('/tips/' + id) }
 
+  /*--Noticias*/
+  public getNoticias(){return this.db.list('/noticias/')}
+
+  public getNoticia(id){return this.db.object('/noticias/' + id)}
+
+
 }
