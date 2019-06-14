@@ -19,6 +19,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { customTranslateLoader } from './components/translate';
 import { NoticiasComponent } from './components/noticias/noticias.component';
+import { AdoptadoComponent } from './components/adoptado/adoptado.component';
 
 
 @NgModule({
@@ -26,12 +27,14 @@ import { NoticiasComponent } from './components/noticias/noticias.component';
     AppComponent,
     TipComponent,
     EsTuyoComponent,
-    NoticiasComponent
+    NoticiasComponent,
+    AdoptadoComponent
   ],
   entryComponents: [
     TipComponent,
     EsTuyoComponent, 
-    NoticiasComponent       
+    NoticiasComponent,
+    AdoptadoComponent       
   ],
   imports: [
     BrowserModule,

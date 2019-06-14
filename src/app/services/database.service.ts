@@ -32,5 +32,10 @@ export class DatabaseService {
 
   public getNoticia(id){return this.db.object('/noticias/' + id)}
 
+  /*--Adopta*/
+  public getAdoptados(){return this.db.list('/mascotas/')}
+
+  public getAdoptado(id){return this.db.object('/mascotas/' + id)}
+
 
 }

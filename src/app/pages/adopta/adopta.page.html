@@ -11,5 +11,10 @@
     
 </ion-header>
 <ion-content>
-    <h1>adopta</h1>
+    <ion-card  *ngFor="let a of adoptados" (click)="openDetail(a)">
+        <img src="{{a.foto}}" />
+          <ion-card-title>
+            {{a.nombre}}
+          </ion-card-title>    
+      </ion-card>
 </ion-content>

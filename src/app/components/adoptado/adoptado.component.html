@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-button slot="start" fill="clear" (click)="closeDetail()">
+      <ion-icon style="color:#fff; font-size:25px" name="arrow-round-back"></ion-icon>
+    </ion-button>
+    <ion-title>titulo</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-img [src]="adoptado.foto"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{adoptado.edad}} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content (click)="openDetail()">
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+    <ion-button  color="danger" expand="block" color="tertiary">
+      <ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+      Adopta
+    </ion-button>
+  </ion-card>
+</ion-content>
