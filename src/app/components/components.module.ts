@@ -7,23 +7,32 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { customTranslateLoader } from './translate';
 
 
+
+
 @NgModule({
   declarations: [
     MenuSegmentComponent,    
+   
   ],
   exports: [
     MenuSegmentComponent,    
+  
+  
   ],
   imports: [
     CommonModule, 
     IonicModule,   
+   
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
         useFactory: customTranslateLoader,
         deps: [HttpClient]
+        
       }
+      
     }),
+ 
   ],
 })
 

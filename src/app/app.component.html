@@ -6,7 +6,9 @@
           <ion-title>{{ 'PAGES.CONFIGURACIONES.TITLE_PAGE' | translate }}<ion-icon name="paw"></ion-icon>
           </ion-title>
         </ion-toolbar>
+      
       </ion-header>
+     
       <ion-content>
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
@@ -46,9 +48,14 @@
                           </ion-label>
                         </ion-item>----->
           </ion-menu-toggle>
+          
         </ion-list>
       </ion-content>
+     
     </ion-menu>
+    
     <ion-router-outlet main></ion-router-outlet>
+    
   </ion-split-pane>
+ 
 </ion-app>
