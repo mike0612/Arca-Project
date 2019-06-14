@@ -24,8 +24,11 @@ export class MenuSegmentComponent implements OnInit {
 
   
   segmentChanged(event) {
+  
     const page = event.detail.value;
-    console.log(page)
+    console.log(page);
+    this.router.navigate([page]);
+    
   }
 
   
