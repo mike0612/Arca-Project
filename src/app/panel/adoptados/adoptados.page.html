@@ -1,9 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>adoptados</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<ion-header class="color5">
+    <ion-toolbar color="danger">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Perros Adoptados</ion-title>
+    </ion-toolbar>
+  
+  </ion-header>
+  
 <ion-content>
-
-</ion-content>
+    <ion-item >
+        <ion-thumbnail slot="start">
+           <img src="assets/images/paw.jpg"/>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>Firulais</h2>
+          <p>APerro educado </p>
+        </ion-label>    
+ 
+      </ion-item>
+      <ion-card-content>
+      <ion-button class="button"color="danger"  (click)="volver()">Salir</ion-button>
+    </ion-card-content>

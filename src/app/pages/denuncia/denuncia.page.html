@@ -9,6 +9,119 @@
     </ion-toolbar>
     <app-menu-segment></app-menu-segment>
   </ion-header>
-  <ion-content>
-    <h1>Denuncia</h1>
+  <ion-content class="cards-bg">
+
+    <ion-card>  
+      <ion-card-content>
+        <ion-card-title text-center>
+          Todos sus datos son seguros y confidenciales.
+        </ion-card-title>
+        <ion-item>
+          <ion-label>Asunto</ion-label>
+          <ion-select placeholder="Seleccione">
+            <ion-select-option value="jauria">Jauría</ion-select-option>
+            <ion-select-option value="abandono">Abandono</ion-select-option>
+            <ion-select-option value="agresion">Agresión</ion-select-option>
+            <ion-select-option value="donacion">Donación</ion-select-option>
+            <ion-select-option value="atropello">Atropello</ion-select-option>
+            <ion-select-option value="otro">Otro</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-card-content>
+      <ion-item>
+        <ion-label position=floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          Nombre de quien reporta
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>
+          <ion-icon name="call" item-start class="text-primary"></ion-icon>
+          Numero de telefono local o celular
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>
+          <ion-icon name="home" item-start class="text-primary"></ion-icon>
+          Dirección
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>
+          <ion-icon name="home" item-start class="text-primary"></ion-icon>
+          Entre calles
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>
+          <ion-icon name="home" item-start class="text-primary"></ion-icon>
+          Referencias del lugar
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position=floating>
+          <ion-icon name="md-information" item-start class="text-primary"></ion-icon>
+          Describa su asunto
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>
+          <ion-icon name="paw" item-start class="text-primary"></ion-icon>
+          Caracteristicas de la o las mascotas
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-card-content>
+        <ion-card-title text-center>
+          <h1> En caso de conocer al dueño o persona reportada</h1> 
+        </ion-card-title>
+      </ion-card-content>
+      <ion-item>
+        <ion-label position=floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          Nombre del dueño
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>
+          <ion-icon name="home" item-start class="text-primary"></ion-icon>
+          Dirección
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>
+          <ion-icon name="home" item-start class="text-primary"></ion-icon>
+          Entre calles
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>
+          <ion-icon name="home" item-start class="text-primary"></ion-icon>
+          Referencias del lugar
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>
+          <ion-icon name="paw" item-start class="text-primary"></ion-icon>
+          Caracteristicas de la o las mascotas
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-card-content >
+        <ion-button class="button"color="medium" (click)=presentAlert() routerLink="/adopta">Enviar</ion-button>
+      </ion-card-content>
+    </ion-card>
+    
+  
   </ion-content>

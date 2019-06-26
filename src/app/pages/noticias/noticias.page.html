@@ -10,7 +10,6 @@
   <app-menu-segment></app-menu-segment>
 </ion-header>
 <ion-content>
-  <h1>noticias</h1>
   <ion-card *ngFor="let n of noticias" class="sombra">
     <img src="{{n.imagen}}" />
     <ion-card-header (click)="openDetail(n)">

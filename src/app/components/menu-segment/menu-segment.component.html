@@ -1,20 +1,20 @@
 <ion-segment  scrollable (ionChange)="segmentChanged($event)" >
 
-        <ion-segment-button value="adopta">
+        <ion-segment-button value="adopta" >
         <ion-label><ion-text color="light">{{ 'PAGES.CONFIGURACIONES.SEGMENTO_ADOPTA' | translate }}</ion-text></ion-label>
         </ion-segment-button>
       
-        <ion-segment-button value="es-tuyo" >
+        <!---<ion-segment-button value="es-tuyo" routerLink="//es-tuyo">
           <ion-label><ion-text color="light">{{ 'PAGES.CONFIGURACIONES.SEGMENTO_ESTUYO' | translate }}</ion-text></ion-label>
-        </ion-segment-button>
+        </ion-segment-button>-->
       
-        <ion-segment-button value="noticias" >
+        <ion-segment-button value="noticias"  >
           <ion-label><ion-text color="light">{{ 'PAGES.CONFIGURACIONES.SEGMENTO_NOTICIAS' | translate }}</ion-text></ion-label>
         </ion-segment-button>
       
-        <ion-segment-button value="citas">
+        <!---<ion-segment-button value="citas">
           <ion-label><ion-text color="light">{{ 'PAGES.CONFIGURACIONES.SEGMENTO_CITAS' | translate }}</ion-text></ion-label>
-        </ion-segment-button>
+        </ion-segment-button>-->
       
         <ion-segment-button value="tips" >
           <ion-label><ion-text color="light">{{ 'PAGES.CONFIGURACIONES.SEGMENTO_TIPS' | translate }}</ion-text></ion-label>
@@ -30,3 +30,4 @@
       
         
       </ion-segment>
+      
