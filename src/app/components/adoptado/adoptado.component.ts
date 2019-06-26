@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NavParams, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { DatabaseService } from 'src/app/services/database.service';
 import { FormularioComponent } from '../formulario/formulario.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-adoptado',
@@ -13,18 +14,21 @@ data:any = [];
 adoptado: any = [];
 
   constructor(
-    private navParams: NavParams,
+    
     private modal: ModalController,
-    private service: DatabaseService
+    private service: DatabaseService,
+    private activateRoute:ActivatedRoute,
+    private router:Router
   ) {
-    this.data = this.navParams.get('adoptado');
-    this.service.getAdoptado(this.data.id).valueChanges().subscribe(adoptado => {
-      this.adoptado = adoptado;
-    })
+
    }
 
   ngOnInit() {
-   
+    let id = this.activateRoute.snapshot.params['adoptado.id'];
+    if(!id)return
+    this.service.getAdoptado(id).valueChanges().subscribe(adoptado => {
+      this.adoptado = adoptado;
+    })
   }
 
   openDeatail(){
@@ -33,8 +37,21 @@ adoptado: any = [];
     }).then((modal) => modal.present())
   }
 
+  openDetail(){
+    
+  }
+
   closeDetail(){
-    this.modal.dismiss()
+    // this.router.navigate[('adopta')];
+  }
+
+  test(adoptado){
+    this.modal.create({
+      component: FormularioComponent,
+      componentProps:{
+        adoptado: adoptado
+      }
+    }).then((modal) => modal.present())
   }
 
 }

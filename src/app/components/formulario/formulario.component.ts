@@ -14,11 +14,7 @@ export class FormularioComponent implements OnInit {
 
   ngOnInit() {}
 
-  openDeatail(){
-    this.modal.create({
-      component:FormularioComponent
-    }).then((modal) => modal.present())
-  }
+  
   closeDetail(){
     this.modal.dismiss()
   }

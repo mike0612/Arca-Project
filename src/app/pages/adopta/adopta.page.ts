@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSegment, ModalController } from '@ionic/angular';
 import { DatabaseService } from 'src/app/services/database.service';
-import { AdoptadoComponent } from 'src/app/components/adoptado/adoptado.component';
+import { Router } from '@angular/router';
+// import { AdoptadoComponent } from 'src/app/components/adoptado/adoptado.component';
 @Component({
   selector: 'app-adopta',
   templateUrl: './adopta.page.html',
@@ -15,7 +16,8 @@ export class AdoptaPage implements OnInit {
 
   constructor(
     private service: DatabaseService,
-    private modal: ModalController
+    private router: Router,
+    // private modal: ModalController
   ) { }
 
   ngOnInit() {
@@ -25,12 +27,14 @@ export class AdoptaPage implements OnInit {
   }
 
   openDetail(adoptado){
-    this.modal.create({
-      component: AdoptadoComponent,
-      componentProps:{
-        adoptado:adoptado
-      }
-    }).then((modal) => modal.present())
+    this.router.navigate(['adoptadoDetail',adoptado.id]);
+    console.log(adoptado.id)
+    // this.modal.create({
+    //   component: AdoptadoComponent,
+    //   componentProps:{
+    //     adoptado:adoptado
+    //   }
+    // }).then((modal) => modal.present())
   }
 
 }

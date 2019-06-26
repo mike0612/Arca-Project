@@ -20,6 +20,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { customTranslateLoader } from './components/translate';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { AdoptadoComponent } from './components/adoptado/adoptado.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 
 @NgModule({
@@ -28,13 +29,15 @@ import { AdoptadoComponent } from './components/adoptado/adoptado.component';
     TipComponent,
     EsTuyoComponent,
     NoticiasComponent,
-    AdoptadoComponent
+    AdoptadoComponent,
+    FormularioComponent
   ],
   entryComponents: [
     TipComponent,
     EsTuyoComponent, 
     NoticiasComponent,
-    AdoptadoComponent       
+    AdoptadoComponent,
+    FormularioComponent       
   ],
   imports: [
     BrowserModule,

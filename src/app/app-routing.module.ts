@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { WithinGuard } from './security/within.guard';
 import { NosessionGuard } from './security/nosession.guard';
+import { AdoptadoComponent } from './components/adoptado/adoptado.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },  
@@ -20,12 +21,9 @@ const routes: Routes = [
   { path: 'mis-citas', loadChildren: './panel/mis-citas/mis-citas.module#MisCitasPageModule', canActivate:[WithinGuard] },
   { path: 'configuraciones', loadChildren: './panel/configuraciones/configuraciones.module#ConfiguracionesPageModule', canActivate:[WithinGuard] },
   { path: 'acerca-de', loadChildren: './panel/acerca-de/acerca-de.module#AcercaDePageModule', canActivate:[WithinGuard] },
-  { path: 'denuncia', loadChildren: './pages/denuncia/denuncia.module#DenunciaPageModule', canActivate:[WithinGuard] 
+  { path: 'denuncia', loadChildren: './pages/denuncia/denuncia.module#DenunciaPageModule', canActivate:[WithinGuard]},
+  { path: 'adoptadoDetail/:adoptado.id', component: AdoptadoComponent }
 
-
-
-
-},
 ];
 
 @NgModule({
