@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController, ToastController, LoadingController } from "@ionic/angular";
+import { MenuController, ToastController, LoadingController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service'
-import { DatabaseService } from '../../services/database.service'
+import { AuthService } from '../../services/auth.service';
+import { DatabaseService } from '../../services';
 import { User } from '../../models/user.model';
 
 @Component({
@@ -15,7 +15,7 @@ export class LoginPage implements OnInit {
   user = {} as User;
   regEx = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
   loadUser: any = [];
-  pb:boolean;
+  pb: boolean;
 
   constructor(
     private menuCtrl: MenuController,
@@ -28,14 +28,14 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.menuCtrl.enable(false);
-    this.pb=false;
+    this.pb = false;
   }
 
   validation() {
     if (this.user.email != null && this.user.password != null) {
       if (!this.regEx.test(this.user.email)) {
         this.presentToast('Ha ingresado un correo inválido');
-      } else if (this.user.password == '') {
+      } else if (this.user.password === '') {
         this.presentToast('Ingrese su contraseña');
       } else {
         this.onSubmitLogin()
@@ -47,11 +47,10 @@ export class LoginPage implements OnInit {
 
   onSubmitLogin() {
     this.pb = true;
-    this.presentToast('Verificando usuario')    
-    this.service.getUserEmail(this.user.email).valueChanges().subscribe((user) => {
+    this.presentToast('Verificando usuario');
+    this.service.getFilterFieldValue('/usuarios/', 'correo', this.user.email).valueChanges().subscribe((user) => {
       this.loadUser = user;
-      if (this.loadUser.find(res => res.email == this.user.email)) {        
-        if (this.loadUser.find(res => res.tipo == 3)) {
+      if (this.loadUser.find(res => res.correo === this.user.email)) {
           this.pb = false;
           this.toastCtrl.dismiss();
           this.showLoading();
@@ -60,23 +59,19 @@ export class LoginPage implements OnInit {
               this.menuCtrl.enable(true);
               this.presentToast('Sesión iniciada');
               this.router.navigate(['/adopta']);
-            })
+            });
           }).catch((error) => {
             this.loadingCtrl.dismiss().then(() => {
-              this.presentToast('No se pudo iniciar sesión, revise los datos infresados o su conexión a internet');
-            })
-          })
-        } else {    
-          this.pb = false;                
-          this.presentToast('El correo que ingresó no coincide con ninguna cuenta');
-        }
-      } else {            
-        this.pb = false;            
+              this.presentToast('Verifique su contraseña');
+            });
+          });
+      } else {
+        this.pb = false;
         this.presentToast('El correo que ingresó no coincide con ninguna cuenta');
       }
     })
   }
-  
+
   forgotPass() {
 
   }

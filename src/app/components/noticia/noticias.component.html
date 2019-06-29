@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{noticia.titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="shadow">
+    <ion-card-header>
+      <ion-card-subtitle>{{noticia.fecha}}</ion-card-subtitle>
+      <ion-card-title>{{noticia.titulo}}</ion-card-title>
+    </ion-card-header>
+    <ion-img [src]="noticia.foto"></ion-img>
+    <ion-item>
+      <ion-card-title>{{noticia.subtitulo}}</ion-card-title>
+    </ion-item>
+    <ion-card-content>
+      {{noticia.contenido}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

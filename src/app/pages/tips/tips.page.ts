@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DatabaseService } from '../../services/database.service';
-import { ModalController} from '@ionic/angular';
-import { TipComponent } from '../../components/tip/tip.component';
+import { DatabaseService } from '../../services';
 
 @Component({
   selector: 'app-tips',
@@ -10,26 +8,15 @@ import { TipComponent } from '../../components/tip/tip.component';
 })
 export class TipsPage implements OnInit {
 
-  tips:any = [];
+  tips: any = [];
+  database = '/tips/';
 
-  constructor(
-    private service: DatabaseService,
-    private modal: ModalController    
-  ) {}
+  constructor( private service: DatabaseService ) {}
 
-  ngOnInit() {    
-    this.service.getTips().valueChanges().subscribe((tips) => {
-      this.tips = tips;  
-    })
-  }
-
-  openTip(tip){
-    this.modal.create({
-      component: TipComponent,
-      componentProps:{
-        tip: tip
-      }     
-    }).then((modal) => modal.present())
+  ngOnInit() {
+    this.service.getAllData(this.database).valueChanges().subscribe((res) => {
+      this.tips = res;
+    });
   }
 
 }

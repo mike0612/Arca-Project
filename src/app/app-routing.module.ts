@@ -3,6 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { WithinGuard } from './security/within.guard';
 import { NosessionGuard } from './security/nosession.guard';
 import { AdoptadoComponent } from './components/adoptado/adoptado.component';
+import { TipComponent } from './components/tip/tip.component';
+import { NoticiasComponent } from './components/noticia/noticias.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },  
@@ -12,8 +14,10 @@ const routes: Routes = [
   { path: 'es-tuyo', loadChildren: './pages/es-tuyo/es-tuyo.module#EsTuyoPageModule', canActivate:[WithinGuard] },  
   { path: 'citas', loadChildren: './pages/citas/citas.module#CitasPageModule', canActivate:[WithinGuard] },
   { path: 'tips', loadChildren: './pages/tips/tips.module#TipsPageModule', canActivate:[WithinGuard] },
+  { path: 'tip/:t.id', component: TipComponent },
   { path: 'contacto', loadChildren: './pages/contacto/contacto.module#ContactoPageModule', canActivate:[WithinGuard] },
   { path: 'noticias', loadChildren: './pages/noticias/noticias.module#NoticiasPageModule', canActivate:[WithinGuard] },
+  { path: 'noticia/:n.id', component: NoticiasComponent },
   { path: 'perfil', loadChildren: './pages/perfil/perfil.module#PerfilPageModule', canActivate:[WithinGuard] },
   { path: 'agenda', loadChildren: './pages/agenda/agenda.module#AgendaPageModule', canActivate:[WithinGuard] },
   { path: 'adoptados', loadChildren: './panel/adoptados/adoptados.module#AdoptadosPageModule', canActivate:[WithinGuard] },

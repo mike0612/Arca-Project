@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DatabaseService } from 'src/app/services/database.service';
-import { ModalController } from '@ionic/angular';
-import { NoticiasComponent } from 'src/app/components/noticias/noticias.component';
+import { DatabaseService } from 'src/app/services';
 
 @Component({
   selector: 'app-noticias',
@@ -9,30 +7,16 @@ import { NoticiasComponent } from 'src/app/components/noticias/noticias.componen
   styleUrls: ['./noticias.page.scss'],
 })
 export class NoticiasPage implements OnInit {
+
+  database = '/noticias/';
   noticias: any = [];
-  data: string;
 
-
-  constructor(
-    private service: DatabaseService,
-    private modal:ModalController,
-   
-  ) {
-     }
+  constructor(private service: DatabaseService) {}
 
   ngOnInit() {
-    this.service.getNoticias().valueChanges().subscribe((noticias) => {
-      this.noticias = noticias;
-    })
-  }
-
-  openDetail(noticia){
-    this.modal.create({
-      component: NoticiasComponent,
-      componentProps:{
-        noticia:noticia
-      }
-    }).then((modal) => modal.present())
+    this.service.getAllData(this.database).valueChanges().subscribe((res) => {
+      this.noticias = res;
+    });
   }
 
 }

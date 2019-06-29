@@ -9,6 +9,32 @@ export class DatabaseService {
 
   constructor(private db: AngularFireDatabase) { }
 
+  /*********************
+  * obtener todos los datos
+  **********************/
+  public getAllData(database) {
+    return this.db.list(database);
+  }
+
+  /*********************
+  * Obtener por id
+  **********************/
+  public getDataId(database, id) {
+    return this.db.object(database + id);
+  }
+
+  /*********************************
+  * Filtrar por valores de campos
+  * ejemplo:
+  * base de datos-> campo = Valor
+  * database     -> field = value
+  *********************************/
+  public getFilterFieldValue(database, field, value) {
+    return this.db.list(database, result =>
+      result.orderByChild(field).equalTo(value));
+  }
+  /*********************************/
+
   public getDenuncias() {
     return this.db.list('/denuncias/').valueChanges();
   }
@@ -25,34 +51,8 @@ export class DatabaseService {
   }
   public getDenuncia(id) {
     return this.db.object('/denuncias/' + id).valueChanges();
-  
+
   }
-
-
-
-  /* --Verificar cuenta de usuario-- */
-  public getUserEmail(mail) {
-    return this.db.list('/tipoUsuarios/', email => email.orderByChild('email').equalTo(mail));
-  }
-
-  /* --Es tuyo?-- */
-  public getPerdidos() { return this.db.list('/perdidos/') }
-
-  public getPerdidosfilter(filter) {
-    return this.db.list('/perdidos/', tipo => tipo.orderByChild('tipo').equalTo(filter));
-  }
-
-  public getPerdido(id) { return this.db.object('/perdidos/' + id) }
-
-  /* --Tips-- */
-  public getTips() { return this.db.list('/tips/') }
-
-  public getTip(id) { return this.db.object('/tips/' + id) }
-
-  /*--Noticias*/
-  public getNoticias() { return this.db.list('/noticias/') }
-
-  public getNoticia(id) { return this.db.object('/noticias/' + id) }
 
   /*--Adopta*/
   public getAdoptados() { return this.db.list('/mascotas/') }

@@ -1,24 +1,18 @@
 <ion-header>
   <ion-toolbar color="tertiary">
-    <ion-button slot="start" fill="clear" (click)="closeTip()">
-      <ion-icon style="color:#fff; font-size:25px" name="arrow-round-back"></ion-icon>
-    </ion-button>
-    <ion-title>{{data.title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{tip.titulo}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-img [src]="tip.img"></ion-img>
+  <ion-card class="shadow">
+    <ion-img [src]="tip.foto"></ion-img>
     <ion-card-header>
-      <ion-card-title>{{tip.title}}</ion-card-title>
+      <ion-card-title>{{tip.titulo}}</ion-card-title>
     </ion-card-header>
-    <ion-card-content>{{tip.title}}</ion-card-content>
-    <ion-item>
-      <ion-button slot="end" size="small" shape="round">
-        <ion-icon name="save"></ion-icon>
-        Guardar
-      </ion-button>
-    </ion-item>
+    <ion-card-content>{{tip.contenido}}</ion-card-content>    
   </ion-card>
 </ion-content>

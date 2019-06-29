@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavParams, ModalController } from '@ionic/angular';
-import { DatabaseService } from '../../services/database.service';
-
+import { DatabaseService } from '../../services';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-tip',
   templateUrl: './tip.component.html',
@@ -9,26 +8,20 @@ import { DatabaseService } from '../../services/database.service';
 })
 export class TipComponent implements OnInit {
 
-  data: any = [];
+  database = '/tips/';
   tip: any = [];
 
   constructor(
-    private navParams: NavParams,
-    private modal: ModalController,
-    private service: DatabaseService
+    private service: DatabaseService,
+    private activatedRoute: ActivatedRoute
   ) { }
 
-  ngOnInit() {  
-    this.data = this.navParams.get('tip');      
-    this.service.getTip(this.data.id).valueChanges().subscribe(tip => {
-      this.tip = tip;      
-    })
+  ngOnInit() {
+    const id = this.activatedRoute.snapshot.params['t.id'];
+    if (!id) { return; }
+    this.service.getDataId(this.database, id).valueChanges().subscribe((res) => {
+      this.tip = res;
+    });
   }
-
-  closeTip(){
-    this.modal.dismiss()
-  }
-
-
 
 }

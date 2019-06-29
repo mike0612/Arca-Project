@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavParams, ModalController } from '@ionic/angular';
-import { DatabaseService } from '../../services/database.service';
 
 @Component({
   selector: 'app-es-tuyo',
@@ -9,26 +7,8 @@ import { DatabaseService } from '../../services/database.service';
 })
 export class EsTuyoComponent implements OnInit {
 
-  data: any = [];
-  perdido: any = [];
+  constructor() { }
 
-  constructor(
-    private navParams: NavParams,
-    private modal: ModalController,
-    private service: DatabaseService
-  ) { 
-    this.data = this.navParams.get('perdido');          
-    this.service.getPerdido(this.data.id).valueChanges().subscribe(perdido => {
-      this.perdido = perdido;
-    })
-  }
-
-  ngOnInit() {
-        
-  }
-
-  closeDeail(){
-    this.modal.dismiss()
-  }
+  ngOnInit() {}
 
 }

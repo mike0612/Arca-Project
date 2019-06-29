@@ -1,5 +1,5 @@
 <ion-header class="color3">
-  <ion-toolbar color="tertiary"> 
+  <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -10,15 +10,13 @@
   <app-menu-segment></app-menu-segment>
 </ion-header>
 <ion-content>
-  <ion-card *ngFor="let n of noticias" class="sombra">
-    <img src="{{n.imagen}}" />
-    <ion-card-header (click)="openDetail(n)">
-      <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
-      <p class="subtitulo">{{n.subtitulo}}</p>
-      <ion-card-title>{{n.titulo}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content text-justify>
-      {{n.contenido}}
-    </ion-card-content>    
-  </ion-card>
+  <ion-item *ngFor="let n of noticias" [routerLink]="[ '/noticia', n.id ]">
+    <ion-thumbnail slot="start">
+      <ion-img [src]="n.foto"></ion-img>
+    </ion-thumbnail>
+    <ion-label>
+      <h2>{{n.titulo}}</h2>
+      <p>{{n.fecha}}</p>
+    </ion-label>
+  </ion-item>
 </ion-content>
