@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from './components/components.module';
-import { firebaseConfig } from '../environments/environment';
+import { environment} from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
@@ -21,6 +21,7 @@ import { customTranslateLoader } from './components/translate';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { AdoptadoComponent } from './components/adoptado/adoptado.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { FormularioComponent } from './components/formulario/formulario.componen
     IonicModule.forRoot(), 
     AppRoutingModule,
     ComponentsModule, 
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig), AngularFirestoreModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     HttpClientModule,

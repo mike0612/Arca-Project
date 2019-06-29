@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
+import { DatabaseService } from 'src/app/services/database.service';
+import { Denuncias } from 'src/app/models/user.model';
+
 
 @Component({
   selector: 'app-denuncia',
@@ -7,8 +10,40 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./denuncia.page.scss'],
 })
 export class DenunciaPage implements OnInit {
-  //gender: string = "Adopción";
-  constructor( public alertController: AlertController) { }
+  
+  idSelected:any; 
+  show:boolean; 
+  denuncias = []; 
+  denuncia :Denuncias={ asunto:''}; 
+
+
+  constructor( private alertController: AlertController, 
+    public navCtrl: NavController, public denunciaservices:  DatabaseService) {
+    this.show = false; 
+       this.idSelected = 0; 
+    
+  denunciaservices.getDenuncias()
+      .subscribe(denuncias=>{
+        this.denuncias = denuncias;
+      });
+   }
+   saveDenuncia(){
+    if(this.idSelected != 0){
+      this.denunciaservices.updateDenuncia(this.denuncia);
+    }else{
+      this.denunciaservices.saveDenuncia(this.denuncia);
+    }
+    this.clear();
+  }
+  
+  clear(){
+    
+    this.show = false;
+    this.idSelected = 0;
+    this.denuncia.asunto = null;
+    this.denuncia.id = null;
+    
+  }
 
   ngOnInit() {
   }
