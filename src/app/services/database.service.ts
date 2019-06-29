@@ -55,9 +55,8 @@ export class DatabaseService {
   }
 
   /*--Adopta*/
-  public getAdoptados() { return this.db.list('/mascotas/') }
+  public getAdoptados() { return this.db.list('/mascotas/'); }
 
-  public getAdoptado(id) { return this.db.object('/mascotas/' + id) }
-
+  public getAdoptado(id) { return this.db.object('/mascotas/' + id); }
 
 }

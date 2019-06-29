@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ModalController } from '@ionic/angular';
-import { TipComponent } from '../../components/tip/tip.component';
 import { Router } from '@angular/router';
 
 
@@ -11,19 +10,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./interesados.page.scss'],
 })
 export class InteresadosPage implements OnInit {
-  tips:any = [];
+  tips: any = [];
   constructor(
     private router: Router,
     private service: DatabaseService,
-    private modal: ModalController   
+    private modal: ModalController
   ) { }
 
-  ngOnInit() {    
-  
+  ngOnInit() {
+
   }
 
-  
-  volver(){
+
+  volver() {
     this.router.navigate(['/adopta']);
   }
 }

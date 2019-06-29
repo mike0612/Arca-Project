@@ -6,33 +6,23 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { customTranslateLoader } from './translate';
 
-
-
-
 @NgModule({
   declarations: [
-    MenuSegmentComponent,    
-   
+    MenuSegmentComponent,
   ],
   exports: [
-    MenuSegmentComponent,    
-  
-  
+    MenuSegmentComponent,
   ],
   imports: [
-    CommonModule, 
-    IonicModule,   
-   
+    CommonModule,
+    IonicModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
         useFactory: customTranslateLoader,
         deps: [HttpClient]
-        
       }
-      
     }),
- 
   ],
 })
 

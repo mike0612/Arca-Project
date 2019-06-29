@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../../services';
 import { ActivatedRoute } from '@angular/router';
+
 @Component({
-  selector: 'app-tip',
-  templateUrl: './tip.component.html',
-  styleUrls: ['./tip.component.scss'],
+  selector: 'app-tip-detail',
+  templateUrl: './tip-detail.page.html',
+  styleUrls: ['./tip-detail.page.scss'],
 })
-export class TipComponent implements OnInit {
+export class TipDetailPage implements OnInit {
 
   database = '/tips/';
   tip: any = [];
@@ -25,3 +26,4 @@ export class TipComponent implements OnInit {
   }
 
 }
+
