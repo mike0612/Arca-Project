@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
       } else if (this.user.password === '') {
         this.presentToast('Ingrese su contraseña');
       } else {
-        this.onSubmitLogin()
+        this.onSubmitLogin();
       }
     } else {
       this.presentToast('Ingrese los datos solicitados para iniciar sesión');
@@ -69,7 +69,7 @@ export class LoginPage implements OnInit {
         this.pb = false;
         this.presentToast('El correo que ingresó no coincide con ninguna cuenta');
       }
-    })
+    });
   }
 
   forgotPass() {
