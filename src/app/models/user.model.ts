@@ -14,4 +14,10 @@ export interface Denuncias{
     referencia_del_lugar: string;
     describa_su_asunto: string;
     caracteristicas_de_las_mascotas: string;
+
+    nombre_duenio: string;
+    direccion_2: string;
+    entre_calles2: string;
+    referencias_2: string;
+    caracteristicas_mascotas2: string;
 }

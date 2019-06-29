@@ -14,7 +14,21 @@ export class DenunciaPage implements OnInit {
   idSelected:any; 
   show:boolean; 
   denuncias = []; 
-  denuncia :Denuncias={ asunto:''}; 
+  denuncia :Denuncias={ 
+    asunto:'',
+    nombre_de_quien_reporta:'',
+    numero_de_telefono:'',
+    direccion: '',
+    entre_calles:'',
+    referencia_del_lugar:'',
+    describa_su_asunto:'',
+    caracteristicas_de_las_mascotas:'',
+    nombre_duenio:'',
+    direccion_2:'',
+    entre_calles2:'',
+    referencias_2:'',
+    caracteristicas_mascotas2:''
+  }; 
 
 
   constructor( private alertController: AlertController, 
