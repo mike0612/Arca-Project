@@ -7,4 +7,11 @@ export interface User{
 export interface Denuncias{
     id?: string;
     asunto: string;
+    nombre_de_quien_reporta: string;
+    numero_de_telefono: string;
+    direccion: string;
+    entre_calles: string;
+    referencia_del_lugar: string;
+    describa_su_asunto: string;
+    caracteristicas_de_las_mascotas: string;
 }
