@@ -42,9 +42,7 @@ export class DatabaseService {
   }
 
   /*********************************/
-  public getDenuncias() {
-    return this.db.list('/denuncias/').valueChanges();
-  }
+ 
   
   public saveDenuncia(denuncia) {
     let key = this.db.list('/denuncias/').push(denuncia).key;
@@ -53,11 +51,6 @@ export class DatabaseService {
     this.db.database.ref('/denuncias/' + denuncia.id).set(denuncia);
 
   }
-  public updateDenuncia(denuncia) {
+ 
 
-    this.db.database.ref('/denuncias/' + denuncia.id).set(denuncia);
-  }
-  public getDenuncia(id) {
-    return this.db.object('/denuncias/' + id).valueChanges();
-  }
 }

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Denuncias } from 'src/app/models/user.model';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 
 @Component({
@@ -9,63 +11,62 @@ import { Denuncias } from 'src/app/models/user.model';
   templateUrl: './denuncia.page.html',
   styleUrls: ['./denuncia.page.scss'],
 })
-export class DenunciaPage implements OnInit {
-  
-  idSelected:any; 
-  show:boolean; 
-  denuncias = []; 
-  denuncia :Denuncias={ 
-    asunto:'',
-    nombre_de_quien_reporta:'',
-    numero_de_telefono:'',
-    direccion: '',
-    entre_calles:'',
-    referencia_del_lugar:'',
-    describa_su_asunto:'',
-    caracteristicas_de_las_mascotas:'',
-    nombre_duenio:'',
-    direccion_2:'',
-    entre_calles2:'',
-    referencias_2:'',
-    caracteristicas_mascotas2:''
-  }; 
+export class DenunciaPage {
+
+  denuncia = {} as Denuncias
 
 
-  constructor( private alertController: AlertController, 
-    public navCtrl: NavController, public denunciaservices:  DatabaseService) {
-    this.show = false; 
-       this.idSelected = 0; 
+  constructor(private alertController: AlertController,
+    public navCtrl: NavController, private router: Router, private activatedRoute: ActivatedRoute, public denunciaservices: DatabaseService) {
+
+  }
+
+  saveDenuncia() {
     
-  denunciaservices.getDenuncias()
-      .subscribe(denuncias=>{
-        this.denuncias = denuncias;
-      });
-   }
-   saveDenuncia(){
-    if(this.idSelected != 0){
-      this.denunciaservices.updateDenuncia(this.denuncia);
-    }else{
-      this.denunciaservices.saveDenuncia(this.denuncia);
-    }
+    this.denunciaservices.saveDenuncia(this.denuncia);
     this.clear();
   }
-  
-  clear(){
-    
-    this.show = false;
-    this.idSelected = 0;
+
+  clear() {
+
     this.denuncia.asunto = null;
-    this.denuncia.id = null;
-    
+    this.denuncia.nombre_de_quien_reporta = null;
+    this.denuncia.numero_de_telefono = null;
+    this.denuncia.direccion = null;
+    this.denuncia.entre_calles =null;
+    this.denuncia.referencia_del_lugar = null;
+    this.denuncia.describa_su_asunto = null;
+    this.denuncia.caracteristicas_de_las_mascotas = null;
+
+    this.denuncia.nombre_duenio = null;
+    this.denuncia.direccion_2 = null;
+    this.denuncia.entre_calles2 = null;
+    this.denuncia.referencias_2 = null;
+    this.denuncia.caracteristicas_mascotas2 = null;
+
   }
 
-  ngOnInit() {
-  }
+
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Atención',
-      message: 'Su acuse ha sido enviado',
-      buttons: ['Aceptar']
+      header: 'Querido Usuario',
+      message: 'Su acuse ha sido enviado, ¿Desea enviar otro reporte?',
+      buttons: [
+        {
+          text: 'SI',
+          handler: () => {
+            console.log('Realizar Otra denuncia')
+            
+          },
+        },
+        {
+          text: 'NO',
+          handler: () => {
+            this.navCtrl.navigateRoot("/header/adopta")
+          },
+        }
+      ]
+
     });
 
     await alert.present();
