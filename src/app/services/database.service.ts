@@ -53,10 +53,20 @@ export class DatabaseService {
     return this.db.object('/denuncias/' + id).valueChanges();
 
   }
+  
+  /*Solicitud de Adopcion*/
+public createFormulario(formulario){
+  return this.db.database.ref('/solicitudesMascotas/' + formulario.id).set(formulario);
+}
+ /*--Adopta*/
 
-  /*--Adopta*/
   public getAdoptados() { return this.db.list('/mascotas/'); }
 
   public getAdoptado(id) { return this.db.object('/mascotas/' + id); }
+  public getSolicitudes() {
+    return this.db.list('/solicitudesMascotas/').valueChanges();
+  }
+
+ 
 
 }
