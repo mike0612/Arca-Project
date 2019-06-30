@@ -1,15 +1,3 @@
-<ion-header class="color5">
-  <ion-toolbar color="warning">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title text-center>
-      Arca <ion-icon name="paw"></ion-icon>
-    </ion-title>
-  </ion-toolbar>
-  <app-menu-segment></app-menu-segment>
-</ion-header>
-
 <ion-content>
   <ion-item *ngFor="let t of tips" [routerLink]="[ '/tip', t.id ]">
     <ion-thumbnail slot="start">

@@ -15,6 +15,6 @@ export class AdoptadosPage implements OnInit {
   ngOnInit() {
   }
   volver(){
-    this.router.navigate(['/adopta']);
+    this.router.navigate(['/header/adopta']);
   }
 }

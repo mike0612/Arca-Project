@@ -10,6 +10,8 @@ export class ContactoPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
+
 
 }

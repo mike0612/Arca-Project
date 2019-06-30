@@ -26,6 +26,6 @@ export class ConfiguracionesPage implements OnInit {
     this._translate.use(idioma);
   }
   volver(){
-    this.router.navigate(['/adopta']);
+    this.router.navigate(['/header/adopta']);
   }
 }

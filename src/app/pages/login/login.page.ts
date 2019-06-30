@@ -58,7 +58,7 @@ export class LoginPage implements OnInit {
             this.loadingCtrl.dismiss().then(() => {
               this.menuCtrl.enable(true);
               this.presentToast('Sesión iniciada');
-              this.router.navigate(['/adopta']);
+              this.router.navigate(['/header/adopta']);
             });
           }).catch((error) => {
             this.loadingCtrl.dismiss().then(() => {

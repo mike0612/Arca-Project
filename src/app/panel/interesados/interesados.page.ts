@@ -23,6 +23,6 @@ export class InteresadosPage implements OnInit {
 
 
   volver() {
-    this.router.navigate(['/adopta']);
+    this.router.navigate(['/header/adopta']);
   }
 }

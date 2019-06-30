@@ -11,7 +11,9 @@ export class NoticiasPage implements OnInit {
   database = '/noticias/';
   noticias: any = [];
 
-  constructor(private service: DatabaseService) {}
+  constructor(
+    private service: DatabaseService,
+  ) {}
 
   ngOnInit() {
     this.service.getAllData(this.database).valueChanges().subscribe((res) => {

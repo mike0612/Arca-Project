@@ -13,17 +13,18 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { DatabaseService } from './services/database.service';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { customTranslateLoader } from './components/translate';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { HeaderComponent } from './components/header/header.component';
 import { AdoptadoComponent } from './components/adoptado/adoptado.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     AdoptadoComponent,
     FormularioComponent
   ],
@@ -47,6 +48,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
         deps: [HttpClient]
       }
     }),
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,
