@@ -8,15 +8,15 @@
 </ion-header>
 <ion-content>
   <ion-card>
-    <ion-img [src]="adoptado.foto"></ion-img>
+    <ion-img [src]="mascota.foto"></ion-img>
     <ion-card-header>
-      <ion-card-title>{{adoptado.edad}} </ion-card-title>
+      <ion-card-title>{{mascota.edad}} </ion-card-title>
     </ion-card-header>
-    <ion-card-content (click)="openDetail()">
+    <ion-card-content>
       Keep close to Nature's heart... and break clear away, once in awhile,
       and climb a mountain or spend a week in the woods. Wash your spirit clean.
     </ion-card-content>
-    <ion-button color="danger" expand="block" color="tertiary" (click)="test(adoptado)">
+    <ion-button color="danger" expand="block" color="tertiary" (click)="adopta()">
       <ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
       Adopta
     </ion-button>

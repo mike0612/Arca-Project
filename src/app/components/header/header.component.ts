@@ -51,6 +51,10 @@ export class HeaderComponent implements OnInit {
     this.s.value = 'adopta';
   }
 
+  ionViewDidEnter() {
+    document.addEventListener('backbutton', function(e) {}, false);
+  }
+
   segmentChanged(event) {
     const page = event.detail.value;
     switch (page) {

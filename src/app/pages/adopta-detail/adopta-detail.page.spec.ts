@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdoptadoComponent } from './adoptado.component';
+import { AdoptaDetailPage } from './adopta-detail.page';
 
-describe('AdoptadoComponent', () => {
-  let component: AdoptadoComponent;
-  let fixture: ComponentFixture<AdoptadoComponent>;
+describe('AdoptaDetailPage', () => {
+  let component: AdoptaDetailPage;
+  let fixture: ComponentFixture<AdoptaDetailPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdoptadoComponent ],
+      declarations: [ AdoptaDetailPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdoptadoComponent);
+    fixture = TestBed.createComponent(AdoptaDetailPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

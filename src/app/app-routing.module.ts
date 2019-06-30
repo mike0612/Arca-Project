@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { WithinGuard, NosessionGuard } from './security';
-import { AdoptadoComponent } from './components/adoptado/adoptado.component';
 import { HeaderComponent } from './components/header/header.component';
 
 const routes: Routes = [
@@ -17,6 +16,8 @@ const routes: Routes = [
       { path: 'denuncia', loadChildren: './pages/denuncia/denuncia.module#DenunciaPageModule' },
     ]
   },
+  { path: 'adoptaM/:a.id', loadChildren: './pages/adopta-detail/adopta-detail.module#AdoptaDetailPageModule' },
+  { path: 'adoptaform/:mascota.id', loadChildren: './pages/adopta-form/adopta-form.module#AdoptaFormPageModule' },
   { path: 'tip/:t.id', loadChildren: './pages/tip-detail/tip-detail.module#TipDetailPageModule' },
   { path: 'noticia/:n.id', loadChildren: './pages/noticia-detail/noticia-detail.module#NoticiaDetailPageModule' },
   { path: 'perfil', loadChildren: './pages/perfil/perfil.module#PerfilPageModule' },
@@ -24,7 +25,6 @@ const routes: Routes = [
   { path: 'interesados', loadChildren: './panel/interesados/interesados.module#InteresadosPageModule' },
   { path: 'configuraciones', loadChildren: './panel/configuraciones/configuraciones.module#ConfiguracionesPageModule' },
   { path: 'acerca-de', loadChildren: './panel/acerca-de/acerca-de.module#AcercaDePageModule' },
-  { path: 'adoptadoDetail/:adoptado.id', component: AdoptadoComponent }
 
 ];
 

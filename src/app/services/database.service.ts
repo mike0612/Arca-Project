@@ -33,8 +33,15 @@ export class DatabaseService {
     return this.db.list(database, result =>
       result.orderByChild(field).equalTo(value));
   }
-  /*********************************/
 
+  /*********************
+  * Agregar
+  **********************/
+  public addNew(database, object) {
+    return this.db.database.ref(database + object.id).set(object);
+  }
+
+  /*********************************/
   public getDenuncias() {
     return this.db.list('/denuncias/').valueChanges();
   }
@@ -51,12 +58,6 @@ export class DatabaseService {
   }
   public getDenuncia(id) {
     return this.db.object('/denuncias/' + id).valueChanges();
-
   }
-
-  /*--Adopta*/
-  public getAdoptados() { return this.db.list('/mascotas/'); }
-
-  public getAdoptado(id) { return this.db.object('/mascotas/' + id); }
 
 }

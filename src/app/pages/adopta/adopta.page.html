@@ -1,8 +1,8 @@
 <ion-content>
-    <ion-card  *ngFor="let a of adoptados" (click)="openDetail(a)">
-        <img src="{{a.foto}}" />
-          <ion-card-title>
-            {{a.nombre}}
-          </ion-card-title>    
-      </ion-card>
+  <ion-card *ngFor="let a of mascotas" [routerLink]="[ '/adoptaM', a.id ]">
+    <img src="{{a.foto}}" />
+    <ion-card-title>
+      {{a.nombre}}
+    </ion-card-title>
+  </ion-card>
 </ion-content>

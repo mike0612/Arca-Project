@@ -1,10 +1,10 @@
 
-export interface User{
+export interface User {
     email: string;
-    password:string;
+    password: string;
 }
 
-export interface Denuncias{
+export interface Denuncias {
     id?: string;
     asunto: string;
     nombre_de_quien_reporta: string;
@@ -14,7 +14,6 @@ export interface Denuncias{
     referencia_del_lugar: string;
     describa_su_asunto: string;
     caracteristicas_de_las_mascotas: string;
-
     nombre_duenio: string;
     direccion_2: string;
     entre_calles2: string;
