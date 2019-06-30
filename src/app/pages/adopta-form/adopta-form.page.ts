@@ -27,6 +27,7 @@ export class AdoptaFormPage implements OnInit {
   guardar() {
     this.solicitud.id = Date.now();
     this.solicitud.idMascota = this.mascota;
+    this.solicitud.folio = ('SLD' + '' + Math.random().toString(10).substr(2, 5));
     this.solicitud.estado = 0;
     this.service.addNew(this.database, this.solicitud).then(() => {
       // mensaje o accion si se guarda

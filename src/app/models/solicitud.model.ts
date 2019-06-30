@@ -5,5 +5,6 @@ export interface Solicitud {
     ocupacion: string;
     idMascota: number;
     estado: number;
+    folio: string;
 
 }
