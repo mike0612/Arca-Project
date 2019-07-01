@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../../services';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-adopta-detail',
@@ -16,6 +17,7 @@ export class AdoptaDetailPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private service: DatabaseService,
     private router: Router,
+    private alertController: AlertController
   ) { }
 
   ngOnInit() {
@@ -28,6 +30,17 @@ export class AdoptaDetailPage implements OnInit {
 
   adopta() {
     this.router.navigate(['/adoptaform', this.mascota.id]);
+    this.presentAlert();
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Atención',
+      message: 'Formulario de adopción Al firmar este documento, el adoptante acepta que 1. El adoptado será un miembro de su familia',
+      buttons: ['Aceptar']
+    });
+
+    await alert.present();
   }
 
 }
