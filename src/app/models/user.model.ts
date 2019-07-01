@@ -19,4 +19,5 @@ export interface Denuncias {
     entre_calles2: string;
     referencias_2: string;
     caracteristicas_mascotas2: string;
+    folio: string;
 }
