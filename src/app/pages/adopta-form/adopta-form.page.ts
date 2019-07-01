@@ -16,6 +16,7 @@ export class AdoptaFormPage implements OnInit {
   mascota: any = [];
   respuestas: any = [];
   datosPersonales: any = [];
+  fecha: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -31,6 +32,7 @@ export class AdoptaFormPage implements OnInit {
     this.service.getDataId('/mascotas/', idMascota).valueChanges().subscribe((res) => {
       this.mascota = res;
     });
+    this.getFecha();
   }
 
   guardar() {
@@ -39,6 +41,7 @@ export class AdoptaFormPage implements OnInit {
     this.solicitud.status = 'En proceso';
     this.solicitud.mascota = this.mascota;
     this.solicitud.respuestas = this.respuestas;
+    this.datosPersonales.fecha = this.fecha;
     this.solicitud.datosPersonales = this.datosPersonales;
 
     this.service.addNew(this.database, this.solicitud).then(() => {
@@ -60,6 +63,14 @@ export class AdoptaFormPage implements OnInit {
       buttons: ['Aceptar']
     });
     await alert.present();
+  }
+
+  getFecha() {
+    const meses = new Array
+    ('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
+    'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
+    const f = new Date();
+    this.fecha = (f.getDate() + '/' + meses[f.getMonth()] + '/' + f.getFullYear());
   }
 
 }
