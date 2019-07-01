@@ -1,4 +1,14 @@
 <ion-app>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+   <div *ngIf="showSplash" class="splash">
+      
+      <div  class="spinner"  > 
+          <div class="fas fa-paw"></div>
+          
+      </div>
+          
+        </div>
   <ion-split-pane>
     <ion-menu>
       <ion-header>
@@ -6,10 +16,11 @@
           <ion-title>{{ 'PAGES.CONFIGURACIONES.TITLE_PAGE' | translate }}<ion-icon name="paw"></ion-icon>
           </ion-title>
         </ion-toolbar>
-      
+       
       </ion-header>
      
       <ion-content>
+    
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
             

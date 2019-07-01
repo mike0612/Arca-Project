@@ -5,11 +5,13 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
+import { timer} from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+  showSplash = true;
   public appPages = [
     {
       title: 'Home',
@@ -40,9 +42,21 @@ export class AppComponent {
     private router: Router,
     private auth: AuthService,
     private _translate: TranslateService,
-    private toastCtrl: ToastController,    
-  ) {
+    private toastCtrl: ToastController,  
+
+  ) 
+  
+  {
     this.initializeApp();
+    platform.ready().then(() => {
+      
+      statusBar.styleDefault();
+      splashScreen.hide();
+ 
+      timer(5000).subscribe(() => this.showSplash = false) 
+      
+
+    });
   }
 
   initializeApp() {
