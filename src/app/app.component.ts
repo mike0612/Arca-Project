@@ -15,14 +15,15 @@ export class AppComponent {
   public appPages = [
     {
       title: 'Home',
-      url: '/adopta',
+      url: '/header/adopta',
       setting:'//configuraciones',
       url1: '//login',
       url2: '//perfil',
       url3: '//interesados',
       url4: '//mis-citas',
       url0:'//adoptados',
-      icon: 'arrow-round-back',
+      url11:'//acerca-de',
+      icon: 'home',
       heart: 'heart',
       person: 'person',
       paw: 'paw',
