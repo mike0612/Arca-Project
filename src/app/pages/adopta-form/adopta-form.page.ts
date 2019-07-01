@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../../services';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Solicitud } from './../../models';
 import { NavController, AlertController } from '@ionic/angular';
 
@@ -11,36 +11,46 @@ import { NavController, AlertController } from '@ionic/angular';
 })
 export class AdoptaFormPage implements OnInit {
 
-  database = '/solicitudesMascotas/';
-  mascota: any;
+  database = '/solicitudesAdopcion/';
   solicitud = {} as Solicitud;
+  mascota: any = [];
+  respuestas: any = [];
+  datosPersonales: any = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private service: DatabaseService,
     public navCtrl: NavController,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    this.mascota = this.activatedRoute.snapshot.params['mascota.id'];
+    const idMascota = this.activatedRoute.snapshot.params['mascota.id'];
     if (!this.mascota) { return; }
+    this.service.getDataId('/mascotas/', idMascota).valueChanges().subscribe((res) => {
+      this.mascota = res;
+    });
   }
 
   guardar() {
     this.solicitud.id = Date.now();
-    this.solicitud.idMascota = this.mascota;
     this.solicitud.folio = ('SLD' + '' + Math.random().toString(10).substr(2, 5));
-    this.solicitud.estado = 0;
+    this.solicitud.status = 'En proceso';
+    this.solicitud.mascota = this.mascota;
+    this.solicitud.respuestas = this.respuestas;
+    this.solicitud.datosPersonales = this.datosPersonales;
+
     this.service.addNew(this.database, this.solicitud).then(() => {
       this.presentAlert();
+      this.router.navigate(['/header/adopta']);
       // mensaje o accion si se guarda
     }).catch(() => {
       // mensaje o accion si no se guarda o si ocurre un error
     });
   }
 
-  closeDetail() { 
+  closeDetail() {
     this.navCtrl.pop();
   }
   async presentAlert() {
@@ -49,7 +59,6 @@ export class AdoptaFormPage implements OnInit {
       message: 'Sus datos se enviaron correctamente',
       buttons: ['Aceptar']
     });
-
     await alert.present();
   }
 

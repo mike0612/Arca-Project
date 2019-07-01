@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar color="tertiary">
-    <ion-button slot="start" fill="clear" (click)="closeDetail()">
-      <ion-icon style="color:#fff; font-size:25px" name="arrow-round-back"></ion-icon>
-    </ion-button>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title>Formulario</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,28 +15,28 @@
           <ion-icon name="person" item-start class="text-primary"></ion-icon>
           Apellidos y Nombres
         </ion-label>
-        <ion-input type="text" name="nombre" [(ngModel)]="solicitud.nombres" required></ion-input>
+        <ion-input type="text" name="nombre" [(ngModel)]="datosPersonales.nombre" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">
           <ion-icon name="compass" item-start color="blue"></ion-icon>
           Ciudad
         </ion-label>
-        <ion-input type="text" name="ciudad" [(ngModel)]="solicitud.apellidos" required></ion-input>
+        <ion-input type="text" name="ciudad" [(ngModel)]="datosPersonales.ciudad" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">
           <ion-icon name="home" item-start color="blue"></ion-icon>
           Dirección
         </ion-label>
-        <ion-input type="text" name="direccion" [(ngModel)]="solicitud.direccion" required></ion-input>
+        <ion-input type="text" name="direccion" [(ngModel)]="datosPersonales.direccion" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">
           <ion-icon name="contacts" item-start color="blue"></ion-icon>
           Estado Civil
         </ion-label>
-        <ion-input type="text" name="estadoCivil" [(ngModel)]="solicitud.estadoCivil" required></ion-input>
+        <ion-input type="text" name="estadoCivil" [(ngModel)]="datosPersonales.estado" required></ion-input>
       </ion-item>
 
       <ion-item>
@@ -44,7 +44,7 @@
           <ion-icon name="mail" item-start color="blue"></ion-icon>
           Correo Electronico
         </ion-label>
-        <ion-input type="text" name="correo" [(ngModel)]="solicitud.correoElectronico" required></ion-input>
+        <ion-input type="text" name="correo" [(ngModel)]="datosPersonales.correo"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -52,7 +52,15 @@
           <ion-icon name="call" item-start color="blue"></ion-icon>
           Telefono
         </ion-label>
-        <ion-input type="number" name="Telefono" [(ngModel)]="solicitud.telefono" required></ion-input>
+        <ion-input type="number" name="telefono" [(ngModel)]="datosPersonales.telefono"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="phone-portrait" item-start color="blue"></ion-icon>
+          Celular
+        </ion-label>
+        <ion-input type="number" name="celular" [(ngModel)]="datosPersonales.celular"></ion-input>
       </ion-item>
 
       <br>
@@ -60,89 +68,93 @@
       <br>
       <ion-item>
         <ion-label position="floating">1. ¿Por que deseas adoptar una mascota?</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.deseas_adoptar_una_mascota_1" required>
+        <ion-input type="text" name="respuesta1" [(ngModel)]="respuestas.respuesta1" required>
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">2. ¿Actualmente tienes otros animales? (Si)(No)</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.tienes_otros_animales_2" required>
+        <ion-input type="text" name="respuesta2" [(ngModel)]="respuestas.respuesta2" required>
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">¿ Cuáles?</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.cuales_2_1" required>
+        <ion-input type="text" name="respuesta2_1" [(ngModel)]="respuestas.respuesta2_1">
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">3. ¿Si los tiene, están esterilizados? (Si)(No)</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.estan_esterilizados_3" required>
+        <ion-input type="text" name="respuesta3" [(ngModel)]="respuestas.respuesta3">
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">¿Por qué?</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.porque_3_1" required>
+        <ion-input type="text" name="respuesta3_1" [(ngModel)]="respuestas.respuesta3_1">
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">4. ¿Anteriormente ha tenido otros animalitos? (Si)(No)</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.ha_tenido_otros_animales_4" required>
+        <ion-input type="text" name="respuesta4" [(ngModel)]="respuestas.respuesta4" required>
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">¿Cuáles?</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.cuales_4_1" required>
+        <ion-input type="text" name="respuesta4_1" [(ngModel)]="respuestas.respuesta4_1">
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">5. ¿Qué fue lo que paso con él/ellos?</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.que_paso_con_ellos_5" required>
+        <ion-input type="text" name="respuesta5" [(ngModel)]="respuestas.respuesta5">
         </ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">6. ¿Está de acuerdo en que se haga una visita periódica a su domicilio para ver como se encuentra el animal adoptado? (Si)(No)</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.estas_deacuerdo_con_una_visita_6" required>
+        <ion-label position="floating">6. ¿Está de acuerdo en que se haga una visita periódica a su domicilio para ver
+          como se encuentra el animal adoptado? (Si)(No)</ion-label>
+        <ion-input type="text" name="respuesta6" [(ngModel)]="respuestas.respuesta6" required>
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">¿Por qué?</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.porque_6_1" required>
+        <ion-input type="text" name="respuesta6_1" [(ngModel)]="respuestas.respuesta6_1" required>
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">7. ¿Cuantas personas viven en su casa?</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.personas_que_viven_en_casa_7" required>
+        <ion-input type="text" name="respuesta7" [(ngModel)]="respuestas.respuesta7" required>
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">8. ¿Están todos de acuerdo en adoptar? (Si)(No)</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.todos_deacuerdo_en_adoptar_8" required>
+        <ion-input type="text" name="respuesta8" [(ngModel)]="respuestas.respuesta8" required>
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">9. ¿Hay niños en casa? (Si)(No)</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.hay_ninos_en_casa_9" required>
+        <ion-input type="text" name="respuesta9" [(ngModel)]="respuestas.respuesta9" required>
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Edades:</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.edades_9_1" required>
+        <ion-input type="text" name="respuesta9_1" [(ngModel)]="respuestas.respuesta9_1">
         </ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">10. ¿Alguien que viva con ustedes es alérgico a los animales o sufre de asma? (Si)(No)</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.alguien_alergico_a_los_animales_10" required>
+        <ion-label position="floating">10. ¿Alguien que viva con ustedes es alérgico a los animales o sufre de asma?
+          (Si)(No)</ion-label>
+        <ion-input type="text" name="respuesta10" [(ngModel)]="respuestas.respuesta10" required>
         </ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">11. En caso de alquiler, ¿Sus arrendadores permiten animalitos en la casa o departamento? (Si)(No)(No se)(Vivo en Casa Propia</ion-label>
-        <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.arrendadores_permiten_animales_11" required>
+        <ion-label position="floating">11. En caso de alquiler, ¿Sus arrendadores permiten animalitos en la casa o
+          departamento? (Si)(No)(No se)(Vivo en Casa Propia)</ion-label>
+        <ion-input type="text" name="respuesta11" [(ngModel)]="respuestas.respuesta11" required>
         </ion-input>
       </ion-item>
       <ion-item>
-          <ion-label position="floating">12. Si por algun motivo tuviera que cambiar de domicilio, ¿Qué pasaría con el animalito? (Si)(No)</ion-label>
-          <ion-input type="text" name="Respuesta" [(ngModel)]="solicitud.que_pasaria_con_el_animal_12" required>
-          </ion-input>
-        </ion-item>
+        <ion-label position="floating">12. Si por algun motivo tuviera que cambiar de domicilio, ¿Qué pasaría con el
+          animalito? (Si)(No)</ion-label>
+        <ion-input type="text" name="respuesta12" [(ngModel)]="respuestas.respuesta12" required>
+        </ion-input>
+      </ion-item>
 
 
       <div>

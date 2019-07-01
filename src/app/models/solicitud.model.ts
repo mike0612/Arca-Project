@@ -1,10 +1,8 @@
 export interface Solicitud {
-    id?: number;
-    nombres: string;
-    apellidos: string;
-    ocupacion: string;
-    idMascota: number;
-    estado: number;
-    folio: string;
-
+    id: number,
+    folio: string,
+    status: string,
+    mascota?: any,
+    datosPersonales?: any,
+    respuestas?: any
 }
