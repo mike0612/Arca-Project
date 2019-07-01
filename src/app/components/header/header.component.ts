@@ -17,8 +17,8 @@ const themes = {
     secondary: '#560079',
   },
   color4: {
-    primary: '#ecb500',
-    secondary: '#06a6b8',
+    primary: '#bd9103',
+    secondary: '#c0c404',
   },
   color5: {
     primary: '#06a6b8',

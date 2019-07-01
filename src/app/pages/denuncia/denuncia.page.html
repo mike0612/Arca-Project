@@ -1,12 +1,14 @@
-<ion-content class="cards-bg">
+<ion-content class="cards-bg" >
+ 
   <ion-card>
+      <form #f="ngForm">
     <ion-card-content>
       <ion-card-title text-center>
         Todos sus datos son seguros y confidenciales.
       </ion-card-title>
-      <ion-item>
+      <ion-item >
         <ion-label>Asunto</ion-label>
-        <ion-select placeholder="Seleccione" [(ngModel)]="denuncia.asunto">
+        <ion-select placeholder="Seleccione" name="asunto"[(ngModel)]="denuncia.asunto" required>
           <ion-select-option value="jauria">Jauría</ion-select-option>
           <ion-select-option value="abandono">Abandono</ion-select-option>
           <ion-select-option value="agresion">Agresión</ion-select-option>
@@ -15,41 +17,43 @@
           <ion-select-option value="otro">Otro</ion-select-option>
         </ion-select>
       </ion-item>
+     
     </ion-card-content>
+ 
     <ion-item>
       <ion-label position=floating>
         <ion-icon name="person" item-start class="text-primary"></ion-icon>
         Nombre de quien reporta
       </ion-label>
-      <ion-input type="text" [(ngModel)]="denuncia.nombre_de_quien_reporta"></ion-input>
+      <ion-input type="text" name="nombre" [(ngModel)]="denuncia.nombre_de_quien_reporta" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position=floating>
         <ion-icon name="call" item-start class="text-primary"></ion-icon>
         Numero de telefono local o celular
       </ion-label>
-      <ion-input type="text" [(ngModel)]="denuncia.numero_de_telefono"></ion-input>
+      <ion-input type="text" name="Telefono" [(ngModel)]="denuncia.numero_de_telefono" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position=floating>
         <ion-icon name="home" item-start class="text-primary"></ion-icon>
         Dirección
       </ion-label>
-      <ion-input type="text" [(ngModel)]="denuncia.direccion"></ion-input>
+      <ion-input type="text" name="direccion" [(ngModel)]="denuncia.direccion" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position=floating>
         <ion-icon name="home" item-start class="text-primary"></ion-icon>
         Entre calles
       </ion-label>
-      <ion-input type="text" [(ngModel)]="denuncia.entre_calles"></ion-input>
+      <ion-input type="text" name="calles" [(ngModel)]="denuncia.entre_calles" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position=floating>
         <ion-icon name="home" item-start class="text-primary"></ion-icon>
         Referencias del lugar
       </ion-label>
-      <ion-input type="text" [(ngModel)]="denuncia.referencia_del_lugar"></ion-input>
+      <ion-input type="text" name="referencias" [(ngModel)]="denuncia.referencia_del_lugar" required></ion-input>
     </ion-item>
 
     <ion-item>
@@ -57,14 +61,14 @@
         <ion-icon name="md-information" item-start class="text-primary"></ion-icon>
         Describa su asunto
       </ion-label>
-      <ion-input type="text" [(ngModel)]="denuncia.describa_su_asunto"></ion-input>
+      <ion-input type="text" name="asunto" [(ngModel)]="denuncia.describa_su_asunto" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position=floating>
         <ion-icon name="paw" item-start class="text-primary"></ion-icon>
         Caracteristicas de la o las mascotas
       </ion-label>
-      <ion-input type="text" [(ngModel)]="denuncia.caracteristicas_de_las_mascotas"></ion-input>
+      <ion-input type="text" name="caracteristicas" [(ngModel)]="denuncia.caracteristicas_de_las_mascotas" required></ion-input>
     </ion-item>
     <ion-card-content>
       <ion-card-title text-center>
@@ -76,40 +80,41 @@
         <ion-icon name="person" item-start class="text-primary"></ion-icon>
         Nombre del dueño
       </ion-label>
-      <ion-input type="text" [(ngModel)]="denuncia.nombre_duenio"></ion-input>
+      <ion-input type="text" name="dueño"[(ngModel)]="denuncia.nombre_duenio"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position=floating>
         <ion-icon name="home" item-start class="text-primary"></ion-icon>
         Dirección
       </ion-label>
-      <ion-input type="text" [(ngModel)]="denuncia.direccion_2"></ion-input>
+      <ion-input type="text" name="direcciondos" [(ngModel)]="denuncia.direccion_2"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position=floating>
         <ion-icon name="home" item-start class="text-primary"></ion-icon>
         Entre calles
       </ion-label>
-      <ion-input type="text" [(ngModel)]="denuncia.entre_calles2"></ion-input>
+      <ion-input type="text" name="entrecalles" [(ngModel)]="denuncia.entre_calles2"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position=floating>
         <ion-icon name="home" item-start class="text-primary"></ion-icon>
         Referencias del lugar
       </ion-label>
-      <ion-input type="text" [(ngModel)]="denuncia.referencias_2"></ion-input>
+      <ion-input type="text" name="refelu"[(ngModel)]="denuncia.referencias_2"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position=floating>
         <ion-icon name="paw" item-start class="text-primary"></ion-icon>
         Caracteristicas de la o las mascotas
       </ion-label>
-      <ion-input type="text" [(ngModel)]="denuncia.caracteristicas_mascotas2"></ion-input>
+      <ion-input type="text" name="caracteristicasdos" [(ngModel)]="denuncia.caracteristicas_mascotas2"></ion-input>
     </ion-item>
     <ion-card-content>
-      <ion-button class="button" color="medium" (click)="saveDenuncia()" (click)=presentAlert() routerLink="/adopta">
+      <ion-button class="button" color="medium" (click)="saveDenuncia()" (click)=presentAlert() [disabled]="f.invalid" >
         Enviar</ion-button>
     </ion-card-content>
+      </form>
   </ion-card>
 
 
