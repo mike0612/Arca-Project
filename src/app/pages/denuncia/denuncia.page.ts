@@ -22,9 +22,9 @@ export class DenunciaPage {
   }
 
   saveDenuncia() {
-    
-    this.denunciaservices.saveDenuncia(this.denuncia);
     this.denuncia.folio = ('DNC'+ ''+Math.random().toString(10).substr(2,5));
+    this.denunciaservices.saveDenuncia(this.denuncia);
+    
     this.clear();
   }
 
