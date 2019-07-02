@@ -7,11 +7,13 @@ import { AlertController } from '@ionic/angular';
 })
 export class AgendaPage implements OnInit {
 
-  gender: string = "f";
+  gender = 'f';
+
   constructor( public alertController: AlertController) { }
 
   ngOnInit() {
   }
+
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Atención',

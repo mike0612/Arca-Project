@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSegment } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { ThemeService } from './../../services';
+import { LoadingController } from '@ionic/angular';
 
 const themes = {
   color1: {
@@ -43,15 +44,24 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private theme: ThemeService
+    private theme: ThemeService,
+    private loadingCtrl: LoadingController
   ) { }
 
   ngOnInit() {
     this.theme.setTheme(themes[this.color1]);
     this.s.value = 'adopta';
+    // this.showLoading();
   }
 
-  ionViewDidEnter() {
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Cargando datos',
+    });
+    loading.present();
+  }
+
+  ionViewWillEnter() {
     document.addEventListener('backbutton', function(e) {}, false);
   }
 
