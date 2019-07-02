@@ -9,16 +9,26 @@
 <ion-content>
   <ion-card>
     <ion-img [src]="mascota.foto"></ion-img>
+    <ion-badge class="raza" color="primary">Raza: {{mascota.raza}}</ion-badge>
     <ion-card-header>
-      <ion-card-title>{{mascota.edad}} </ion-card-title>
+      <ion-card-subtitle>
+        <ion-chip color="primary">
+          <ion-label><strong>Edad:</strong> {{mascota.edad}}</ion-label>
+        </ion-chip>
+        <ion-chip color="secondary">
+          <ion-label><strong>Sexo:</strong> {{mascota.sexo}}</ion-label>
+        </ion-chip>
+        <ion-chip color="danger" center>
+            <ion-label><strong>Talla:</strong> {{mascota.talla}}</ion-label>
+          </ion-chip>
+      </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      <h5 class="ion-text-justify">{{mascota.descripcion}}</h5>
     </ion-card-content>
-    <ion-button color="danger" expand="block" color="tertiary" (click)="adopta()">
-      <ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
-      Adopta
-    </ion-button>
   </ion-card>
+  <ion-button class="ion-padding" color="primary" expand="block" color="primary" (click)="adopta()">
+    <ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+    Adopta
+  </ion-button>
 </ion-content>

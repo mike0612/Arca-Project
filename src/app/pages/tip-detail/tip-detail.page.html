@@ -11,8 +11,9 @@
   <ion-card class="shadow">
     <ion-img [src]="tip.foto"></ion-img>
     <ion-card-header>
-      <ion-card-title>{{tip.titulo}}</ion-card-title>
+      <ion-card-title>
+          <ion-badge color="primary">{{tip.titulo}}</ion-badge></ion-card-title>
     </ion-card-header>
-    <ion-card-content>{{tip.contenido}}</ion-card-content>    
+    <ion-card-content><h3 class="ion-text-justify">{{tip.contenido}}</h3> </ion-card-content>    
   </ion-card>
 </ion-content>

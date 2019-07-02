@@ -1,8 +1,12 @@
-<ion-content>
-  <ion-card *ngFor="let a of mascotas" [routerLink]="[ '/adoptaM', a.id ]">
-    <img src="{{a.foto}}" />
-    <ion-card-title>
-      {{a.nombre}}
-    </ion-card-title>
-  </ion-card>
+<ion-content no-padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let a of mascotas" [routerLink]="[ '/adoptaM', a.id ]">
+        <ion-card>
+          <ion-img [src]=a.foto></ion-img>          
+          <ion-badge class="ion-float-left" color="primary">{{a.raza}}</ion-badge>          
+        </ion-card>        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
