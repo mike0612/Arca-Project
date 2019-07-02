@@ -16,7 +16,7 @@ export class AdoptaPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.service.getAllData(this.database).valueChanges().subscribe((res) => {
+    this.service.getFilterFieldValue(this.database,'status','Disponible').valueChanges().subscribe((res) => {
       this.mascotas = res;
     });
   }
