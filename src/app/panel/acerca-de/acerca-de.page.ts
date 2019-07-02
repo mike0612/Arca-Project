@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-acerca-de',
   templateUrl: './acerca-de.page.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcercaDePage implements OnInit {
 
-  constructor() { }
+  constructor(  private _translate: TranslateService) { }
 
   ngOnInit() {
   }
