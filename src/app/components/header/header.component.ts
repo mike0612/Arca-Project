@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSegment } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { ThemeService, DatabaseService } from './../../services';
-import { LoadingController } from '@ionic/angular';
+import { ThemeService } from './../../services';
 
 const themes = {
   color1: {
@@ -40,25 +39,17 @@ export class HeaderComponent implements OnInit {
   private color4 = 'color4';
   private color5 = 'color5';
 
-  colores: any = {};
 
   @ViewChild(IonSegment) s: IonSegment;
 
   constructor(
     private router: Router,
     private theme: ThemeService,
-    private loadingCtrl: LoadingController,
-    private dbService: DatabaseService,
   ) { }
 
   ngOnInit() {
-    this.dbService.getAllData('/colores/').valueChanges().subscribe((res) => {
-      this.colores = res;
-    });
     this.s.value = 'adopta';
-    this.colores[0] ?
-          this.theme.setTheme(this.colores[0]) :
-          this.theme.setTheme(themes[this.color1]);
+    this.theme.setTheme(themes[this.color1]);
   }
 
   segmentChanged(event) {
@@ -66,33 +57,23 @@ export class HeaderComponent implements OnInit {
     switch (page) {
       case 'adopta':
         this.router.navigate(['header/' + page]);
-        this.colores[0] ?
-          this.theme.setTheme(this.colores[0]) :
-          this.theme.setTheme(themes[this.color1]);
+        this.theme.setTheme(themes[this.color1]);
         break;
       case 'noticias':
         this.router.navigate(['header/' + page]);
-        this.colores[1] ?
-          this.theme.setTheme(this.colores[1]) :
-          this.theme.setTheme(themes[this.color2]);
+        this.theme.setTheme(themes[this.color2]);
         break;
       case 'tips':
         this.router.navigate(['header/' + page]);
-        this.colores[2] ?
-          this.theme.setTheme(this.colores[2]) :
-          this.theme.setTheme(themes[this.color3]);
+        this.theme.setTheme(themes[this.color3]);
         break;
       case 'denuncia':
         this.router.navigate(['header/' + page]);
-        this.colores[3] ?
-          this.theme.setTheme(this.colores[3]) :
-          this.theme.setTheme(themes[this.color4]);
+        this.theme.setTheme(themes[this.color4]);
         break;
       case 'contacto':
         this.router.navigate(['header/' + page]);
-        this.colores[4] ?
-          this.theme.setTheme(this.colores[4]) :
-          this.theme.setTheme(themes[this.color5]);
+        this.theme.setTheme(themes[this.color5]);
         break;
     }
   }
