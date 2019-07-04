@@ -8,12 +8,13 @@ import Leaflet from 'leaflet';
   styleUrls: ['./contacto.page.scss'],
 })
 export class ContactoPage {
-  @ViewChild('map') mapContainer: ElementRef;
+ // @ViewChild('map') mapContainer: ElementRef;
   mapa: any;
   constructor( private geolocation: Geolocation) { }
 
   ionViewDidEnter() {
     this.loadmap();
+    
   }
 
   loadmap(): void {
@@ -34,12 +35,12 @@ export class ContactoPage {
     Leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© Open Street Map',
       minZoom: 8,
-      maxZoom: 18,
+      maxZoom: 10,
       doubleClickZoom: true,
     }).addTo(this.mapa);
     this.mapa.locate({
       setView: true,
-      maxZoom: 12.3
+      maxZoom: 30.3
     })
     let markerGroup = Leaflet.featureGroup();
 
