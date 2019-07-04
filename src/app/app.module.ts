@@ -18,7 +18,7 @@ import { customTranslateLoader } from './components/translate';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { HeaderComponent } from './components/header/header.component';
 import { IonicStorageModule } from '@ionic/storage';
-
+import {Geolocation} from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { IonicStorageModule } from '@ionic/storage';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     HttpClientModule,
-
+   
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -47,7 +47,7 @@ import { IonicStorageModule } from '@ionic/storage';
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen, Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AngularFireDatabase,
     DatabaseService,
