@@ -50,18 +50,9 @@ function CSSTextGenerator(colors) {
     secondary,
   } = colors;
 
-  const shadeRatio = 0.1;
-  const tintRatio = 0.1;
-
   return `
   --ion-color-primary: ${primary};
   --ion-color-secondary: ${secondary};
   --ion-toolbar-background-color: ${primary};
-
   `;
-}
-
-function contrast(color, ratio = 0.8) {
-  color = Color(color);
-  return color.isDark() ? color.lighten(ratio) : color.darken(ratio);
 }

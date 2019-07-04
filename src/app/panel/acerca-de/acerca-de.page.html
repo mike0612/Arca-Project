@@ -1,38 +1,37 @@
 <ion-header class="color1">
   <ion-toolbar color="danger">
-      <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title text-center>
-        Acerca de...<ion-icon name="paw"></ion-icon>
-      </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-center>
+      Acerca de...<ion-icon name="paw"></ion-icon>
+    </ion-title>
   </ion-toolbar>
-  
+
 </ion-header>
 <ion-content class="cards-bg">
 
-  <ion-card>
+  <ion-card *ngFor="let l of logos">
     <ion-card-content>
-      <ion-card-title text-center>
-       Honorable Ayuntamiento de Tehuacán
+      <ion-card-title class="ion-text-center">
+        Honorable Ayuntamiento de Tehuacán
       </ion-card-title>
-      
-      <img src="assets/images/lgosH.jpg"/>
-     
+      <ion-img class="logo1" [src]="l.logo1"></ion-img>
+      <ion-img class="logo2" [src]="l.logo2"></ion-img>
     </ion-card-content>
-    <img src="assets/images/Arca.png"/>
-    <h6 text-center> En su versión 2.0</h6>
+    <ion-card-content>
+      <img class="logo3" src="assets/images/Arca.png" />
+      <h6 text-center> En su versión 2.0</h6>
+    </ion-card-content>
     <ion-card-content>
       <ion-card-title text-center>
         Producto desarrollado por:
       </ion-card-title>
-      
-      <img src="assets/images/Yilan2.png"/>
-
+      <img class="logo4" src="assets/images/Yilan2.png" />
       <br>
       <h6 text-center> Soporte técnico y contacto</h6>
-<h6 text-center> yilan.enterprise@gmail.com</h6>
+      <h6 text-center> yilan.enterprise@gmail.com</h6>
     </ion-card-content>
 
-
   </ion-card>
+</ion-content>

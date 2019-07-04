@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { DatabaseService } from './../../services/database.service';
 @Component({
   selector: 'app-acerca-de',
   templateUrl: './acerca-de.page.html',
@@ -7,9 +8,17 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AcercaDePage implements OnInit {
 
-  constructor(  private _translate: TranslateService) { }
+  logos: any = [];
+
+  constructor(
+    private _translate: TranslateService,
+    private dbService: DatabaseService
+  ) { }
 
   ngOnInit() {
+    this.dbService.getAllData('/movil/').valueChanges().subscribe((res) => {
+      this.logos = res;
+    })
   }
 
 }

@@ -14,22 +14,12 @@ export class AdoptaPage implements OnInit {
 
   constructor(
     private service: DatabaseService,
-    //private loadingCtrl: LoadingController
   ) { }
 
   ngOnInit() {
-    //this.showLoading();
     this.service.getFilterFieldValue(this.database, 'status', 'Disponible').valueChanges().subscribe((res) => {
       this.mascotas = res;
-     // this.loadingCtrl.dismiss();
     });
   }
-
-  /*async showLoading() {
-    const loading = await this.loadingCtrl.create({
-      message: 'Cargando datos',
-    });
-    loading.present();
-  }*/
 
 }
