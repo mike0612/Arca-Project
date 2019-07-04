@@ -9,23 +9,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./configuraciones.page.scss'],
 })
 export class ConfiguracionesPage implements OnInit {
-  
+
   constructor(
-    
     private navCtrl: NavController,
-    private _translate: TranslateService,
+    private translate: TranslateService,
     private router: Router
-  ) {  
-    
-  }
+  ) {}
 
   ngOnInit() {
   }
   cambiaIdioma(idioma: string) {
     console.log(`Traduzco a: ${idioma}`);
-    this._translate.use(idioma);
+    this.translate.use(idioma);
   }
-  volver(){
+
+  volver() {
     this.router.navigate(['/header/adopta']);
   }
 }

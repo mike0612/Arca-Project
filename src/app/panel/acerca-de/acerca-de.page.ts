@@ -11,14 +11,14 @@ export class AcercaDePage implements OnInit {
   logos: any = [];
 
   constructor(
-    private _translate: TranslateService,
+    private translate: TranslateService,
     private dbService: DatabaseService
   ) { }
 
   ngOnInit() {
     this.dbService.getAllData('/movil/').valueChanges().subscribe((res) => {
       this.logos = res;
-    })
+    });
   }
 
 }
