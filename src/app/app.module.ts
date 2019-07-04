@@ -19,6 +19,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { HeaderComponent } from './components/header/header.component';
 import { IonicStorageModule } from '@ionic/storage';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { IonicStorageModule } from '@ionic/storage';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     HttpClientModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -48,7 +50,8 @@ import { IonicStorageModule } from '@ionic/storage';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AngularFireDatabase,
-    DatabaseService
+    DatabaseService,
+    
   ],
   bootstrap: [AppComponent]
 })

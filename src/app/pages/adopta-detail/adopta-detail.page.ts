@@ -36,7 +36,7 @@ export class AdoptaDetailPage implements OnInit {
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Atención',
-      message: 'Formulario de adopción Al firmar este documento, el adoptante acepta que 1. El adoptado será un miembro de su familia',
+      message: 'Formulario de adopción. Al firmar este documento, el adoptante acepta todos los términos. El adoptado será un miembro más de su familia',
       buttons: ['Aceptar']
     });
 
