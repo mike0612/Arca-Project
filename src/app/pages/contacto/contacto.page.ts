@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import Leaflet from 'leaflet';
 
@@ -7,14 +7,17 @@ import Leaflet from 'leaflet';
   templateUrl: './contacto.page.html',
   styleUrls: ['./contacto.page.scss'],
 })
-export class ContactoPage {
+export class ContactoPage implements OnInit {
   // @ViewChild('map') mapContainer: ElementRef;
   mapa: any;
   constructor(private geolocation: Geolocation) { }
 
+  ngOnInit() {
+    this.loadmap();
+  }
+
   ionViewDidEnter() {
     document.addEventListener('backbutton', function (e) { }, false);
-    this.loadmap();
   }
 
   loadmap(): void {
