@@ -16,7 +16,7 @@ export class ContactoPage implements OnInit {
     this.loadmap();
   }
 
-  ionViewDidEnter() {
+  ionViewWillEnter() {
     document.addEventListener('backbutton', function (e) { }, false);
   }
 

@@ -21,7 +21,7 @@ export class NoticiasPage implements OnInit {
     });
   }
 
-  ionViewDidEnter() {
+  ionViewWillEnter() {
     document.addEventListener('backbutton', function (e) { }, false);
   }
 

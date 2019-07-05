@@ -22,7 +22,7 @@ export class AdoptaPage implements OnInit {
     });
   }
 
-  ionViewDidEnter() {
+  ionViewWillEnter() {
     document.addEventListener('backbutton', function (e) { }, false);
   }
 

@@ -20,7 +20,7 @@ export class DenunciaPage {
     public denunciaservices: DatabaseService
   ) { }
 
-  ionViewDidEnter() {
+  ionViewWillEnter() {
     document.addEventListener('backbutton', function (e) { }, false);
   }
 

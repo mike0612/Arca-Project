@@ -19,7 +19,7 @@ export class ConfiguracionesPage implements OnInit {
   ngOnInit() {
   }
 
-  ionViewDidEnter() {
+  ionViewWillEnter() {
     document.addEventListener('backbutton', function (e) { }, false);
   }
 

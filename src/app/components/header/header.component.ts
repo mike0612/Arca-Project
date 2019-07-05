@@ -52,7 +52,7 @@ export class HeaderComponent implements OnInit {
     this.theme.setTheme(themes[this.color1]);
   }
 
-  ionViewDidEnter() {
+  ionViewWillEnter() {
     document.addEventListener('backbutton', function (e) { }, false);
   }
 
