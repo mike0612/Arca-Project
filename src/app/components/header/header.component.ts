@@ -52,6 +52,10 @@ export class HeaderComponent implements OnInit {
     this.theme.setTheme(themes[this.color1]);
   }
 
+  ionViewDidEnter() {
+    document.addEventListener('backbutton', function (e) { }, false);
+  }
+
   segmentChanged(event) {
     const page = event.detail.value;
     switch (page) {

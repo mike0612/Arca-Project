@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Platform, MenuController, ToastController} from '@ionic/angular';
+import { Platform, MenuController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
-import { timer} from 'rxjs';
+import { timer } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -16,13 +16,13 @@ export class AppComponent {
     {
       title: 'Home',
       url: '/header/adopta',
-      setting:'//configuraciones',
+      setting: '//configuraciones',
       url1: '//login',
       url2: '//perfil',
       url3: '//interesados',
       url4: '//mis-citas',
-      url0:'//adoptados',
-      url11:'//acerca-de',
+      url0: '//adoptados',
+      url11: '//acerca-de',
       icon: 'home',
       heart: 'heart',
       person: 'person',
@@ -32,7 +32,6 @@ export class AppComponent {
       log: 'log-out',
       settings: 'md-settings'
     },
-
   ];
 
   constructor(
@@ -43,19 +42,14 @@ export class AppComponent {
     private router: Router,
     private auth: AuthService,
     private _translate: TranslateService,
-    private toastCtrl: ToastController,  
-
-  ) 
-  
-  {
+    private toastCtrl: ToastController,
+  ) {
     this.initializeApp();
     platform.ready().then(() => {
-      
+
       statusBar.styleDefault();
       splashScreen.hide();
- 
-      timer(5000).subscribe(() => this.showSplash = false) 
-      
+      timer(5000).subscribe(() => this.showSplash = false)
 
     });
   }

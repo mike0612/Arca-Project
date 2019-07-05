@@ -18,6 +18,11 @@ export class ConfiguracionesPage implements OnInit {
 
   ngOnInit() {
   }
+
+  ionViewDidEnter() {
+    document.addEventListener('backbutton', function (e) { }, false);
+  }
+
   cambiaIdioma(idioma: string) {
     console.log(`Traduzco a: ${idioma}`);
     this.translate.use(idioma);

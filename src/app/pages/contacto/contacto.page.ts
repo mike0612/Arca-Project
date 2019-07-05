@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import {Geolocation} from '@ionic-native/geolocation/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 import Leaflet from 'leaflet';
 
 @Component({
@@ -8,13 +8,13 @@ import Leaflet from 'leaflet';
   styleUrls: ['./contacto.page.scss'],
 })
 export class ContactoPage {
- // @ViewChild('map') mapContainer: ElementRef;
+  // @ViewChild('map') mapContainer: ElementRef;
   mapa: any;
-  constructor( private geolocation: Geolocation) { }
+  constructor(private geolocation: Geolocation) { }
 
   ionViewDidEnter() {
+    document.addEventListener('backbutton', function (e) { }, false);
     this.loadmap();
-    
   }
 
   loadmap(): void {
@@ -24,7 +24,7 @@ export class ContactoPage {
       iconSize: [32, 32]
     });
 
-    let myIconPeople = Leaflet.divIcon({     
+    let myIconPeople = Leaflet.divIcon({
       className: 'iconArca',
       html: '<img src="../../assets/images/miubucacion.png">',
       iconSize: [32, 32]
@@ -49,7 +49,7 @@ export class ContactoPage {
       + "<br><b>Direccion: Av. López Mateos"
       + "<br><b>8:00 am - 16:00pm ").openPopup();
     markerGroup.addLayer(marker);
-    
+
     this.geolocation.getCurrentPosition().then((resp) => {
       let lat = resp.coords.latitude;
       let long = resp.coords.longitude;
@@ -58,7 +58,7 @@ export class ContactoPage {
       markerGroup.addLayer(marker2);
     });
     this.mapa.addLayer(markerGroup);
-    
+
   }
 
 
