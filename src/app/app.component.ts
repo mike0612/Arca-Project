@@ -49,7 +49,7 @@ export class AppComponent {
 
       statusBar.styleDefault();
       splashScreen.hide();
-      timer(5000).subscribe(() => this.showSplash = false)
+      timer(9000).subscribe(() => this.showSplash = false)
 
     });
   }
