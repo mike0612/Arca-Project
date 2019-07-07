@@ -26,9 +26,15 @@
     <ion-card-content>
       <h5 class="ion-text-justify">{{mascota.descripcion}}</h5>
     </ion-card-content>
+
+    <ion-card-content>
+      <ion-button class="ion-padding" color="primary" expand="block" color="primary" (click)="adopta()">
+        <ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+       Adopta
+      </ion-button>
+    </ion-card-content>
+<br>
+<br>
   </ion-card>
-  <ion-button class="ion-padding" color="primary" expand="block" color="primary" (click)="adopta()">
-    <ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
-    Adopta
-  </ion-button>
+ 
 </ion-content>

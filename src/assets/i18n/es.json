@@ -20,7 +20,15 @@
 
         "BTN_ES": "Español",
         "BTN_EN": "Inglés",
-        "BTN_SALIR": "Salir"
+        "BTN_SALIR": "Salir",
+
+
+        "PANTALLA_ADOPTA_DESCRIPCION":"Descripción",
+        "PANTALLA_ADOPTA_RAZA":"Raza",
+        "PANTALLA_ADOPTA_EDAD":"Género",
+        "PANTALLA_ADOPTA_SEXO": "Sexo",
+        "PANTALLA_ADOPTA_TALLA":"Talla",
+        "BTN_ADOPTA":"Adopta"
         }
         
       

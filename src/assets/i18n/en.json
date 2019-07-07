@@ -21,7 +21,14 @@
 
           "BTN_ES": "Spanish",
           "BTN_EN": "English",
-          "BTN_SALIR": "Go out"
+          "BTN_SALIR": "Go out",
+
+        "PANTALLA_ADOPTA_DESCRIPCION":"Description",
+        "PANTALLA_ADOPTA_RAZA":"Breed",
+        "PANTALLA_ADOPTA_EDAD":"Age",
+        "PANTALLA_ADOPTA_SEXO": "Gender",
+        "PANTALLA_ADOPTA_TALLA":"Size",
+        "BTN_ADOPTA":"Adopt"
         }
         
       }
