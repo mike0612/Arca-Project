@@ -22,7 +22,7 @@ const themes = {
   },
   color5: {
     primary: '#002b75',
-    secondary: '#c90000',
+    secondary: '#633ce0',
   }
 };
 
