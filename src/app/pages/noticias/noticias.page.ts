@@ -17,8 +17,14 @@ export class NoticiasPage implements OnInit {
 
   ngOnInit() {
     this.service.getAllData(this.database).valueChanges().subscribe((res) => {
-      this.noticias = res;
+      this.noticias = res.sort(this.compare);
     });
+  }
+
+  compare(a, b) {
+    if (a.id < b.id) { return 1; }
+    if (a.id > b.id) { return -1; }
+    return 0;
   }
 
   ionViewWillEnter() {

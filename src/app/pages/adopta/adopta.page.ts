@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from './../../services';
-import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-adopta',
@@ -11,6 +10,8 @@ export class AdoptaPage implements OnInit {
 
   database = '/mascotas/';
   mascotas: any = [];
+
+  private color = 'color1';
 
   constructor(
     private service: DatabaseService,

@@ -2,7 +2,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6" *ngFor="let a of mascotas" [routerLink]="[ '/adoptaM', a.id ]">
-        <ion-card>
+        <ion-card>          
           <ion-img [src]=a.foto></ion-img>          
           <ion-badge class="ion-float-left" color="primary">{{a.raza}}</ion-badge>          
         </ion-card>        

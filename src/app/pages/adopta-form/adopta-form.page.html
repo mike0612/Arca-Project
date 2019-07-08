@@ -72,9 +72,11 @@
         </ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">2. ¿Actualmente tienes otros animales? (Si)(No)</ion-label>
-        <ion-input type="text" name="respuesta2" [(ngModel)]="respuestas.respuesta2" required>
-        </ion-input>
+        <ion-label>2. ¿Actualmente tienes otros animales?</ion-label>
+        <ion-select name="respuesta2" [(ngModel)]="respuestas.respuesta2" required>
+          <ion-select-option value="si">Si</ion-select-option>
+          <ion-select-option value="no">No</ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label position="floating">¿ Cuáles?</ion-label>
@@ -82,9 +84,11 @@
         </ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">3. ¿Si los tiene, están esterilizados? (Si)(No)</ion-label>
-        <ion-input type="text" name="respuesta3" [(ngModel)]="respuestas.respuesta3">
-        </ion-input>
+        <ion-label>3. ¿Si los tiene, están esterilizados?</ion-label>
+        <ion-select name="respuesta3" [(ngModel)]="respuestas.respuesta3">
+          <ion-select-option value="si">Si</ion-select-option>
+          <ion-select-option value="no">No</ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label position="floating">¿Por qué?</ion-label>
@@ -92,9 +96,11 @@
         </ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">4. ¿Anteriormente ha tenido otros animalitos? (Si)(No)</ion-label>
-        <ion-input type="text" name="respuesta4" [(ngModel)]="respuestas.respuesta4" required>
-        </ion-input>
+        <ion-label>4. ¿Anteriormente ha tenido otros animalitos?</ion-label>
+        <ion-select name="respuesta4" [(ngModel)]="respuestas.respuesta4" required>
+          <ion-select-option value="si">Si</ion-select-option>
+          <ion-select-option value="no">No</ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label position="floating">¿Cuáles?</ion-label>
@@ -107,10 +113,12 @@
         </ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">6. ¿Está de acuerdo en que se haga una visita periódica a su domicilio para ver
-          como se encuentra el animal adoptado? (Si)(No)</ion-label>
-        <ion-input type="text" name="respuesta6" [(ngModel)]="respuestas.respuesta6" required>
-        </ion-input>
+        <ion-label>6. ¿Está de acuerdo en que se haga una visita periódica a su domicilio para ver
+          como se encuentra el animal adoptado?</ion-label>
+        <ion-select name="respuesta6" [(ngModel)]="respuestas.respuesta6" required>
+          <ion-select-option value="si">Si</ion-select-option>
+          <ion-select-option value="no">No</ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label position="floating">¿Por qué?</ion-label>
@@ -123,14 +131,18 @@
         </ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">8. ¿Están todos de acuerdo en adoptar? (Si)(No)</ion-label>
-        <ion-input type="text" name="respuesta8" [(ngModel)]="respuestas.respuesta8" required>
-        </ion-input>
+        <ion-label>8. ¿Están todos de acuerdo en adoptar?</ion-label>
+        <ion-select name="respuesta8" [(ngModel)]="respuestas.respuesta8" required>
+          <ion-select-option value="si">Si</ion-select-option>
+          <ion-select-option value="no">No</ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">9. ¿Hay niños en casa? (Si)(No)</ion-label>
-        <ion-input type="text" name="respuesta9" [(ngModel)]="respuestas.respuesta9" required>
-        </ion-input>
+        <ion-label>9. ¿Hay niños en casa?</ion-label>
+        <ion-select name="respuesta9" [(ngModel)]="respuestas.respuesta9" required>
+          <ion-select-option value="si">Si</ion-select-option>
+          <ion-select-option value="no">No</ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Edades:</ion-label>
@@ -138,33 +150,37 @@
         </ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">10. ¿Alguien que viva con ustedes es alérgico a los animales o sufre de asma?
-          (Si)(No)</ion-label>
-        <ion-input type="text" name="respuesta10" [(ngModel)]="respuestas.respuesta10" required>
-        </ion-input>
+        <ion-label>10. ¿Alguien que viva con ustedes es alérgico a los animales o sufre de asma?
+        </ion-label>
+        <ion-select name="respuesta10" [(ngModel)]="respuestas.respuesta10" required>
+          <ion-select-option value="si">Si</ion-select-option>
+          <ion-select-option value="no">No</ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">11. En caso de alquiler, ¿Sus arrendadores permiten animalitos en la casa o
-          departamento? (Si)(No)(No se)(Vivo en Casa Propia)</ion-label>
-        <ion-input type="text" name="respuesta11" [(ngModel)]="respuestas.respuesta11" required>
-        </ion-input>
+        <ion-label>11. En caso de alquiler, ¿Sus arrendadores permiten animalitos en la casa o
+          departamento?</ion-label>
+        <ion-select name="respuesta11" [(ngModel)]="respuestas.respuesta11" required>
+          <ion-select-option value="si">Si</ion-select-option>
+          <ion-select-option value="no">No</ion-select-option>
+          <ion-select-option value="no">No sé</ion-select-option>
+          <ion-select-option value="no">Vivo en casa propia</ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">12. Si por algun motivo tuviera que cambiar de domicilio, ¿Qué pasaría con el
-          animalito? (Si)(No)</ion-label>
+        <ion-label position="floating">12. Si se cambiara de domicilio, ¿Qué pasaría con el
+          animalito?</ion-label>
         <ion-input type="text" name="respuesta12" [(ngModel)]="respuestas.respuesta12" required>
         </ion-input>
       </ion-item>
-
-
     </form>
     <ion-card>
 
-        <div>
-            <ion-button expand="block" (click)="guardar()" [disabled]="f.invalid">
-              Enviar
-            </ion-button>
-          </div>
+      <div>
+        <ion-button expand="block" (click)="guardar()" [disabled]="f.invalid">
+          Enviar
+        </ion-button>
+      </div>
     </ion-card>
   </ion-card>
 
