@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../../services';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Solicitud } from './../../models';
-import { NavController, AlertController } from '@ionic/angular';
+import { NavController, AlertController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-adopta-form',
@@ -17,13 +17,15 @@ export class AdoptaFormPage implements OnInit {
   respuestas: any = [];
   datosPersonales: any = [];
   fecha: string;
+  loaderToShow: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private service: DatabaseService,
     public navCtrl: NavController,
     private alertController: AlertController,
-    private router: Router
+    private router: Router,
+    private loadingController: LoadingController
   ) { }
 
   ngOnInit() {
@@ -36,6 +38,7 @@ export class AdoptaFormPage implements OnInit {
   }
 
   guardar() {
+    this.showLoader();
     this.solicitud.id = Date.now();
     this.solicitud.folio = ('SLD' + '' + Math.random().toString(10).substr(2, 5));
     this.solicitud.status = 'En proceso';
@@ -45,8 +48,7 @@ export class AdoptaFormPage implements OnInit {
     this.solicitud.datosPersonales = this.datosPersonales;
 
     this.service.addNew(this.database, this.solicitud).then(() => {
-      this.presentAlert();
-      this.router.navigate(['/header/adopta']);      
+      this.hideLoader();
     }).catch(() => {
       //
     });
@@ -59,7 +61,9 @@ export class AdoptaFormPage implements OnInit {
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Atención',
-      message: 'Sus datos se enviaron correctamente',
+      message: 'Sus datos se enviaron correctamente. Tendrá ' +
+      'un  plazo máximo de tres días para recoger su mascota en caso contrario ' +
+      'el trámite será cancelado',
       buttons: ['Aceptar']
     });
     await alert.present();
@@ -67,10 +71,26 @@ export class AdoptaFormPage implements OnInit {
 
   getFecha() {
     const meses = new Array
-    ('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
-    'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
+      ('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
+        'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
     const f = new Date();
     this.fecha = (f.getDate() + '/' + meses[f.getMonth()] + '/' + f.getFullYear());
+  }
+
+  showLoader() {
+    this.loaderToShow = this.loadingController.create({
+      message: 'Enviando datos'
+    }).then((res) => {
+      res.present();
+    });
+  }
+
+  hideLoader() {
+    setTimeout(() => {
+      this.loadingController.dismiss();
+      this.presentAlert();
+      this.router.navigate(['/header/adopta']);
+    }, 1000);
   }
 
 }
