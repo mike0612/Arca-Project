@@ -46,16 +46,16 @@ export class AdoptaFormPage implements OnInit {
 
     this.service.addNew(this.database, this.solicitud).then(() => {
       this.presentAlert();
-      this.router.navigate(['/header/adopta']);
-      // mensaje o accion si se guarda
+      this.router.navigate(['/header/adopta']);      
     }).catch(() => {
-      // mensaje o accion si no se guarda o si ocurre un error
+      //
     });
   }
 
   closeDetail() {
     this.navCtrl.pop();
   }
+
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Atención',
