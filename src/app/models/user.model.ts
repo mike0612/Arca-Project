@@ -20,4 +20,5 @@ export interface Denuncias {
     referencias_2: string;
     caracteristicas_mascotas2: string;
     folio: string;
+    fecha: any;
 }

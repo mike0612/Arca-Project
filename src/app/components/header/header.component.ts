@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSegment } from '@ionic/angular';
+import { IonSegment, AlertController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { ThemeService } from './../../services';
 import { Themes } from './../../models';
@@ -16,6 +16,8 @@ export class HeaderComponent implements OnInit {
   @ViewChild(IonSegment) s: IonSegment;
 
   constructor(
+    private alertController: AlertController,
+    public navCtrl: NavController,
     private router: Router,
     private theme: ThemeService,
   ) { }
@@ -53,6 +55,23 @@ export class HeaderComponent implements OnInit {
         this.theme.setTheme(Themes[this.color[4]]);
         break;
     }
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Atención Querido Usuario',
+      message: 'Todos sus datos son manipulados con total seguridad y confidencialidad',
+      buttons: [
+        {
+          text: 'Entendido',
+     
+        },
+   
+      ]
+
+    });
+
+    await alert.present();
   }
 }
 

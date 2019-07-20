@@ -1,14 +1,14 @@
 <ion-content class="cards-bg" >
- 
+    <form #f="ngForm">
   <ion-card>
-      <form #f="ngForm">
+    
     <ion-card-content>
       <ion-card-title text-center>
         Todos sus datos son seguros y confidenciales.
       </ion-card-title>
       <ion-item >
         <ion-label>Asunto</ion-label>
-        <ion-select placeholder="Seleccione" name="asunto"[(ngModel)]="denuncia.asunto" required>
+        <ion-select placeholder="Seleccione" name="asunto" [(ngModel)]="denuncia.asunto" required>
           <ion-select-option value="jauria">Jauría</ion-select-option>
           <ion-select-option value="abandono">Abandono</ion-select-option>
           <ion-select-option value="agresion">Agresión</ion-select-option>
@@ -110,12 +110,13 @@
       </ion-label>
       <ion-input type="text" name="caracteristicasdos" [(ngModel)]="denuncia.caracteristicas_mascotas2"></ion-input>
     </ion-item>
+
     <ion-card-content>
       <ion-button class="button" color="medium" (click)="saveDenuncia()" (click)=presentAlert() [disabled]="f.invalid" >
         Enviar</ion-button>
     </ion-card-content>
-      </form>
+  
   </ion-card>
-
+</form>
 
 </ion-content>
