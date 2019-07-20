@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-card class="shadow">
-    <ion-img [src]="tip.foto"></ion-img>
+    <ion-img [src]="tip.foto" (click)="preview(tip)"></ion-img>
     <ion-card-header>
       <ion-card-title>
           <ion-badge color="primary">{{tip.titulo}}</ion-badge></ion-card-title>

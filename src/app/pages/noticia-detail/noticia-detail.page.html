@@ -15,7 +15,7 @@
       </ion-card-subtitle>
       <ion-card-title>{{noticia.titulo}}</ion-card-title>
     </ion-card-header>
-    <ion-img [src]="noticia.foto"></ion-img>
+    <ion-img [src]="noticia.foto" (click)="preview(noticia)"></ion-img>
     <ion-item>
       <ion-card-title>
         <ion-chip color="primary">

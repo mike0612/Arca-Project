@@ -63,7 +63,7 @@ export class AdoptaFormPage implements OnInit {
       header: 'Atención',
       message: 'Sus datos se enviaron correctamente. Tendrá ' +
       'un  plazo máximo de tres días para recoger su mascota en caso contrario ' +
-      'el trámite será cancelado',
+      'el trámite será cancelado.',
       buttons: ['Aceptar']
     });
     await alert.present();

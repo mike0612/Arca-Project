@@ -8,7 +8,7 @@
 </ion-header>
 <ion-content>
   <ion-card>
-    <ion-img [src]="mascota.foto"></ion-img>
+    <ion-img [src]="mascota.foto" (click)="preview(mascota)"></ion-img>
     <ion-badge class="raza" color="primary">Raza: {{mascota.raza}}</ion-badge>
     <ion-card-header>
       <ion-card-subtitle>

@@ -19,6 +19,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { HeaderComponent } from './components/header/header.component';
 import { IonicStorageModule } from '@ionic/storage';
 import {Geolocation} from '@ionic-native/geolocation/ngx';
+import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,6 @@ import {Geolocation} from '@ionic-native/geolocation/ngx';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     HttpClientModule,
-   
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -51,7 +51,7 @@ import {Geolocation} from '@ionic-native/geolocation/ngx';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AngularFireDatabase,
     DatabaseService,
-    
+    PhotoViewer,
   ],
   bootstrap: [AppComponent]
 })
