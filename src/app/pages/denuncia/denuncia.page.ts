@@ -9,24 +9,34 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./denuncia.page.scss'],
 })
 export class DenunciaPage {
-
   denuncia = {} as Denuncias;
+  fecha: string;
 
+  
   constructor(
     private alertController: AlertController,
     public navCtrl: NavController,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     public denunciaservices: DatabaseService
-  ) { }
+  ) {const meses = new Array
+    ('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
+    'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
+    const dias = new Array
+    ('Domingo','Lunes','Martes','Miércoles','Juevez','Viernes','Sábado');
 
+    const f = new Date();
+    this.fecha = ( dias[f.getDay()] +" "+ f.getDate() + ' de ' + meses[f.getMonth()] + ' del ' + f.getFullYear()+" a las "+f.getHours()+":"+f.getMinutes()+":"+f.getSeconds());
+  console.log(this.fecha)  
+  }
   ionViewWillEnter() {
     document.addEventListener('backbutton', function (e) { }, false);
   }
-
-  saveDenuncia() {
+    saveDenuncia() {
     this.denuncia.folio = ('DNC' + '' + Math.random().toString(10).substr(2, 5));
+    this.denuncia.fecha =  this.fecha;
     this.denunciaservices.saveDenuncia(this.denuncia);
+     
     this.clear();
   }
 
@@ -72,4 +82,6 @@ export class DenunciaPage {
 
     await alert.present();
   }
+
+ 
 }
